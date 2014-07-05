@@ -29,18 +29,24 @@ Dependencies
 
 Install
 =======
-- If you have root permission::
+- If you have root permission:
+
   ```python
   python setup.py install
   ```
-- or if you do not have root permission::
 
+- or if you do not have root permission:
+
+  ```python
   python setup.py install --user
+  ```
 
 - or in your python script (preferred):
 
+  ```python
   import sys
   sys.path.append("path_to_this_foler")
+  ```
 
 Instructions
 ============
@@ -51,30 +57,39 @@ Two examples are also provided in shen_ISMB2014.py and train_test.py.
 Parse
 -----
 
-Parse MS/MS spectra to the internal representation. ms_folder is the folder for all the spectra.
+Parse MS/MS spectra to the internal representation.
 
-- For the MS/MS data in the format as example dataset provided in the package, one can use following: 
+- For the MS/MS data in the format as example dataset provided in the package, one can use the following: 
 
+  ```python
   from fingerid.preprocess.msparser import MSParser
+  \# ms_folder is the folder for all the spectra.
   ms_list = msparser.parse_dir(ms_folder) 
+  ```
 
 - For the MS/MS data downloaded from MassBank:
 
+  ```python  
   from fingerid.preprocess.massbankparser import MassBankParser
   mbparser = MassBankParser()
   ms_list = mbparser.parse_dir(ms_folder)
+  ```
 
 - For the MS/MS data downloaded from Metlin (.msx format):
 
+  ```python
   from fingerid.preprocess.metlinparser import MetlinParser
   mlparser = MetlinParser()
   ms_list = mlparser.parse_dir(ms_folder)
+  ```
 
 - For the fragmentation tree in .dot format (fgtree_folder is the folder name for fragmentation tree data):
 
+  ```python
   from fingerid.preprocess.fgtreeparser import FragTreeParser
   fgtreeparser = FragTreeParser()
   trees = fgtreeparser.parse_dir(fgtree_folder)
+  ```
 
 Kerenl
 ------
