@@ -48,33 +48,29 @@ Two examples are also provided in shen_ISMB2014.py and train_test.py.
 Parse
 -----
 
-Parse MS/MS spectra to the internal representation.
+Parse MS/MS spectra to the internal representation. ms_folder is the folder for all the spectra.
 
-- For the MS/MS data in the format as example dataset provided in the package:
+- For the MS/MS data in the format as example dataset provided in the package, one can use following: 
 
   from fingerid.preprocess.msparser import MSParser
-  \# ms_folder is the folder name for MS/MS data
   ms_list = msparser.parse_dir(ms_folder) 
 
 - For the MS/MS data downloaded from MassBank:
 
   from fingerid.preprocess.massbankparser import MassBankParser
   mbparser = MassBankParser()
-  # ms_folder is the folder name for MS/MS data
   ms_list = mbparser.parse_dir(ms_folder)
 
 - For the MS/MS data downloaded from Metlin (.msx format):
 
   from fingerid.preprocess.metlinparser import MetlinParser
   mlparser = MetlinParser()
-  # ms_folder is the folder name for MS/MS data
   ms_list = mlparser.parse_dir(ms_folder)
 
-- For the fragmentation tree in .dot format:
+- For the fragmentation tree in .dot format (fgtree_folder is the folder name for fragmentation tree data):
 
   from fingerid.preprocess.fgtreeparser import FragTreeParser
   fgtreeparser = FragTreeParser()
-  # fgtree_folder is the folder name for fragmentation tree data
   trees = fgtreeparser.parse_dir(fgtree_folder)
 
 Kerenl
@@ -83,13 +79,12 @@ Kerenl
 Two types of kernel functions are provided. For the MS/MS data, "PPK" kernel is 
 used:
   
-  # parse MS/MS
   from fingerid.preprocess.msparser import MSParser
   from fingerid.kernel.twodgaussiankernel import TwoDGaussianKernel
   train_ms_list = msparser.parse_dir(train_ms_folder)
 
-  # Compute the PPK kernel with m/z variance sm and intensity variance si.
-  # In practice, tune the sm and si by cross validation is important.
+  \# Compute the PPK kernel with m/z variance sm and intensity variance si.
+  \# In practice, tune the sm and si by cross validation is important.
   kernel = TwoDGaussianKernel(sm, si)
   train_km = kernel.compute_train_kernel(train_ms_list)
 
