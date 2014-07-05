@@ -7,7 +7,7 @@ prediction, without fingerprints generation and compound database retrieval.
 This package utilize fragmentation tree, another view of MS/MS spectra, to 
 improve fingerprints prediction.
 
-The previous versions are hosted in sourceforge: http://sourceforge.net/projects/fingerid/
+The previous versions are hosted on sourceforge: http://sourceforge.net/projects/fingerid/
 
 
 Changes
