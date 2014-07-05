@@ -198,7 +198,7 @@ To predict on the test data using trained models:
   from fingerid.model.trainSVM import trainModels
   from fingerid.model.predSVM import predModels
   model_dir = "MODELS" # model_dir is the folder to put the trained models
-  models = trainModels(train_kernel, labels, model_dir, select_c=False, n_p)
+  trainModels(train_kernel, labels, model_dir, select_c=False, n_p)
   preds = predModels(test_kernel, n_fp, model_dir) # n_fp is the number of fingerprints
   ```
 
