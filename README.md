@@ -63,7 +63,7 @@ Parse MS/MS spectra to the internal representation.
 
   ```python
   from fingerid.preprocess.msparser import MSParser
-  \# ms_folder is the folder for all the spectra.
+  # ms_folder is the folder for all the spectra.
   ms_list = msparser.parse_dir(ms_folder) 
   ```
 
@@ -72,6 +72,7 @@ Parse MS/MS spectra to the internal representation.
   ```python  
   from fingerid.preprocess.massbankparser import MassBankParser
   mbparser = MassBankParser()
+  # ms_folder is the folder for all the spectra.
   ms_list = mbparser.parse_dir(ms_folder)
   ```
 
@@ -80,6 +81,7 @@ Parse MS/MS spectra to the internal representation.
   ```python
   from fingerid.preprocess.metlinparser import MetlinParser
   mlparser = MetlinParser()
+  # ms_folder is the folder for all the spectra.
   ms_list = mlparser.parse_dir(ms_folder)
   ```
 
@@ -94,37 +96,45 @@ Parse MS/MS spectra to the internal representation.
 Kerenl
 ------
 
-Two types of kernel functions are provided. For the MS/MS data, "PPK" kernel is 
+Two types of kernel functions are provided. For the MS/MS data, "PPK" kernel is
 used:
   
+  ```python
   from fingerid.preprocess.msparser import MSParser
   from fingerid.kernel.twodgaussiankernel import TwoDGaussianKernel
   train_ms_list = msparser.parse_dir(train_ms_folder)
-
-  \# Compute the PPK kernel with m/z variance sm and intensity variance si.
-  \# In practice, tune the sm and si by cross validation is important.
+   
+  # Compute the PPK kernel with m/z variance sm and intensity variance si.
+  # In practice, tune the sm and si by cross validation is important.
   kernel = TwoDGaussianKernel(sm, si)
   train_km = kernel.compute_train_kernel(train_ms_list)
 
   # When have test data, to compute test kernel
   test_ms_list = msparser.parse_dir(test_ms_folder)
   test_km = kernel.compute_test_kernel(test_ms_list,train_ms_list)
+  ```
 
 For fragmentation tree:
 
 - parse fragmentation tree
+
+  ```python
   from fingerid.preprocess.fgtreeparser import FragTreeParser
   fgtreeparser = FragTreeParser()
   train_trees = fgtreeparser.parse_dir(train_fgtree_folder)
+  ```
 
 - Compute training kernel
 
+  ```python
   kernel = FragTreeKernel()
   # Kernel can be "NB","NI","LB","LC","LI","RLB","RLI","CPC","CP2","CPK","CSC"
   train_tree_km = kernel.compute_kernel(train_trees, "NB")
-  
+  ```  
+
 - When have test data for fragmentation trees
 
+  ```python
   test_trees = fgtreeparser.parse_dir(test_fgtree_folder)  
   n_train = len(train_trees)
   n_test = len(test_trees)
@@ -135,9 +145,11 @@ For fragmentation tree:
   tree_km = kernel.compute_kernel(trees, "NB")
   train_tree_km = tree_km[0:n_train, 0:n_train]
   test_tree_km = tree_km[n_train:n, 0:n_train]
+  ```
 
 To combine the kernel using MKL (UNIMKL, ALIGN, ALIGNF):
 
+  ```python
   # km_list is a list of kernel matrices (numpy 2d array).
   # output is fingerprint matrix (numpy 2d array).
   # The MKL algorithms can be 'UNIMKL', 'ALIGN' and 'ALIGNF'.
@@ -145,13 +157,14 @@ To combine the kernel using MKL (UNIMKL, ALIGN, ALIGNF):
   # The weights can be used to combine the test kernel.
   from fingerid.kernel.mkl import mkl
   ckm, kw = mkl(km_list, output, 'ALIGN')
-
+  ```
 
 Predict
 ----------
 
 To performe cross validation on training data:
 
+  ```python
   from fingerid.model.internalCV_mp import internalCV
   # kernel is the kernel matrix (numpy 2d array)
   # labels is fingerprint matrix (numpy 2d array).
@@ -161,27 +174,33 @@ To performe cross validation on training data:
   n_folds = 5
   pred_f = "prediction.txt"
   internalCV(kernel, labels, n_folds, pred_f, select_c=False):
-
+  ```
+ 
 To performe cross validation on training data with mulitple processes. This is
 useful when you have many fingerprints (output) to train:
 
+  ```python
   from fingerid.model.internalCV_mp import internalCV_mp
   # n_p is the number of processes to be used
   internalCV_mp(kernel, labels, n_folds, pred_f, select_c=False, n_p=8):
+  ```
 
 To train the model on all the data instead of doing cross validation:
 
+  ```python
   from fingerid.model.trainSVM import trainModels
   # model_f is the file to store the trained models
   models = trainModels(kernel, labels, select_c=False, n_p):
+  ```
 
 To predict on the test data using trained models:
 
+  ```python
   from fingerid.model.trainSVM import trainModels
   from fingerid.model.predSVM import predModels
   models = trainModels(train_kernel, labels, select_c=False, n_p):
   preds = predModels(test_kernel, models):
-
+  ```
 
 References
 ==========
