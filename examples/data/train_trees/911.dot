@@ -1,0 +1,15 @@
+strict digraph {
+v1 [label="C16H11O3\n252.0775 Da, 2.51 %\nMassDev: -2.4257 ppm, -0.0006 Da\ncE: [40]\nMass Deviation=-1.3157\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=1.3248\nCommonLossEdgeScorer=-0.6392\nChemicalPriorEdgeScorer=0.0237\nLossSizeScorer=1.0352\nScore: 0.6662"];
+v2 [label="C18H14O4\n295.0952 Da, 42.52 %\nMassDev: -4.3700 ppm, -0.0013 Da\ncE: [10, 20, 40]\nMass Deviation=-3.0738\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=3.6524\nCommonLossEdgeScorer=-0.8781\nChemicalPriorEdgeScorer=0.0012\nLossSizeScorer=0.8022\nScore: 0.7413"];
+v3 [label="C18H17O3\n282.1255 Da, 1.16 %\nMassDev: 1.4851 ppm, 0.0004 Da\ncE: [20, 40]\nMass Deviation=-0.6969\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=0.6928\nCommonLossEdgeScorer=-0.6392\nChemicalPriorEdgeScorer=0.0411\nLossSizeScorer=1.0352\nScore: 0.6703"];
+v4 [label="C17H11O3\n264.0787 Da, 2.44 %\nMassDev: 2.1635 ppm, 0.0006 Da\ncE: [40]\nMass Deviation=-1.1284\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=1.3030\nCommonLossEdgeScorer=1.2550\nChemicalPriorEdgeScorer=0.0104\nLossSizeScorer=-0.7934\nScore: 0.8841"];
+v5 [label="C18H14O3\n279.1004 Da, 44.70 %\nMassDev: -4.0925 ppm, -0.0011 Da\ncE: [10, 20, 40]\nMass Deviation=-2.7821\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=3.6936\nCommonLossEdgeScorer=0.4486\nChemicalPriorEdgeScorer=-0.0168\nLossSizeScorer=1.0338\nScore: 2.6145"];
+v6 [label="C20H20O4\n325.1425 Da, 112.91 %\nMassDev: -2.8665 ppm, -0.0009 Da\ncE: [10, 20, 40]\nMass Deviation=-1.6544\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.4553\nCommonLossEdgeScorer=-1.1915\nChemicalPriorEdgeScorer=0.0241\nLossSizeScorer=0.8400\nScore: 2.7110"];
+v7 [label="C21H25NO4\n356.1849 Da, 106.99 %\nMassDev: -2.0506 ppm, -0.0007 Da\ncE: [10, 20]\nMass Deviation=-1.0501\nChemical Prior=0.2138\nScore: -0.8362"];
+v2 -> v1 [label="C2H3O"];
+v6 -> v2 [label="C2H6"];
+v6 -> v3 [label="C2H3O"];
+v5 -> v4 [label="CH3"];
+v6 -> v5 [label="C2H6O"];
+v7 -> v6 [label="CH5N"];
+}

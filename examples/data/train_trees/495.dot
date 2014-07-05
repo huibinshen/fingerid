@@ -1,0 +1,15 @@
+strict digraph {
+v1 [label="C35H40O14\n707.2325 Da, 0.58 %\nMassDev: 2.1530 ppm, 0.0015 Da\ncE: [40]\nMass Deviation=-1.1655\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=0.1266\nCommonLossEdgeScorer=1.8586\nChemicalPriorEdgeScorer=0.0444\nLossSizeScorer=-0.2300\nScore: 0.8715"];
+v2 [label="C29H34O12\n597.1938 Da, 0.52 %\nMassDev: -0.6721 ppm, -0.0004 Da\ncE: [40]\nMass Deviation=-0.2868\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=0.0361\nCommonLossEdgeScorer=0.2254\nChemicalPriorEdgeScorer=0.0554\nLossSizeScorer=0.7087\nScore: 0.9762"];
+v3 [label="C27H28O10\n535.1566 Da, 3.03 %\nMassDev: -1.7005 ppm, -0.0009 Da\ncE: [40]\nMass Deviation=-0.8692\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=1.4803\nCommonLossEdgeScorer=-0.3282\nChemicalPriorEdgeScorer=0.0480\nLossSizeScorer=0.8008\nScore: 1.3691"];
+v4 [label="C28H30O11\n565.1692 Da, 10.45 %\nMassDev: 2.0749 ppm, 0.0012 Da\ncE: [40]\nMass Deviation=-1.1223\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.4987\nCommonLossEdgeScorer=-1.5131\nChemicalPriorEdgeScorer=0.0447\nLossSizeScorer=0.8895\nScore: 1.0349"];
+v5 [label="C30H34O13\n625.1918 Da, 23.10 %\nMassDev: 4.2975 ppm, 0.0027 Da\ncE: [20, 40]\nMass Deviation=-3.1568\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=3.1509\nCommonLossEdgeScorer=-3.0815\nChemicalPriorEdgeScorer=0.0514\nLossSizeScorer=-0.0112\nScore: -2.8097"];
+v6 [label="C35H42O15\n725.2423 Da, 159.72 %\nMassDev: 0.9564 ppm, 0.0007 Da\ncE: [10, 20, 40]\nMass Deviation=-0.4255\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.7404\nCommonLossEdgeScorer=1.8586\nChemicalPriorEdgeScorer=0.0482\nLossSizeScorer=-0.2295\nScore: 6.2297"];
+v7 [label="C35H44O16\n743.2555 Da, 503.93 %\nMassDev: 4.5564 ppm, 0.0034 Da\ncE: [10, 20, 40]\nMass Deviation=-3.4240\nChemical Prior=0.2271\nScore: -3.1970"];
+v6 -> v1 [label="H2O"];
+v5 -> v2 [label="CO"];
+v4 -> v3 [label="CH2O"];
+v5 -> v4 [label="C2H4O2"];
+v6 -> v5 [label="C5H8O2"];
+v7 -> v6 [label="H2O"];
+}

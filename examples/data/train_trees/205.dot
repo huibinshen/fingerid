@@ -1,0 +1,17 @@
+strict digraph {
+v1 [label="C8H2\n99.0231 Da, 0.68 %\nMassDev: 1.2620 ppm, 0.0001 Da\ncE: [40]\nMass Deviation=-0.2199\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=0.2557\nCommonLossEdgeScorer=1.3333\nLossSizeScorer=0.0490\nScore: 1.6556"];
+v2 [label="C8H3F\n119.0287 Da, 4.79 %\nMassDev: -4.0655 ppm, -0.0005 Da\ncE: [40]\nMass Deviation=-1.0992\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=1.8576\nCommonLossEdgeScorer=1.3333\nChemicalPriorEdgeScorer=-0.0435\nLossSizeScorer=0.0491\nScore: 2.3346"];
+v3 [label="C8H4F2\n139.0347 Da, 3.28 %\nMassDev: -4.8552 ppm, -0.0007 Da\ncE: [40]\nMass Deviation=-1.7317\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=1.5468\nCommonLossEdgeScorer=1.3333\nChemicalPriorEdgeScorer=0.0191\nLossSizeScorer=0.0491\nScore: 1.4540"];
+v4 [label="C5H3F\n83.0294 Da, 0.79 %\nMassDev: 3.4230 ppm, 0.0003 Da\ncE: [40]\nMass Deviation=-0.5626\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=0.3812\nCommonLossEdgeScorer=-0.0150\nLossSizeScorer=0.5948\nScore: 0.6358"];
+v5 [label="C7H5F\n109.0447 Da, 35.27 %\nMassDev: -1.0046 ppm, -0.0001 Da\ncE: [20, 40]\nMass Deviation=-0.1905\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=3.4988\nCommonLossEdgeScorer=-3.0815\nChemicalPriorEdgeScorer=0.0234\nLossSizeScorer=1.0126\nScore: 1.5003"];
+v6 [label="C8H5F3\n159.0411 Da, 199.10 %\nMassDev: -3.2107 ppm, -0.0005 Da\ncE: [10, 20, 40]\nMass Deviation=-1.1805\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.9216\nCommonLossEdgeScorer=0.1432\nChemicalPriorEdgeScorer=0.0520\nLossSizeScorer=0.7104\nScore: 4.8841"];
+v7 [label="C10H9F3\n187.0727 Da, 12.68 %\nMassDev: -0.8953 ppm, -0.0002 Da\ncE: [10, 20]\nMass Deviation=-0.3043\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.6580\nCommonLossEdgeScorer=-2.1622\nChemicalPriorEdgeScorer=0.0554\nLossSizeScorer=1.0358\nScore: 1.5201"];
+v8 [label="C12H16F3N\n232.1311 Da, 98.93 %\nMassDev: 1.4861 ppm, 0.0003 Da\ncE: [10, 20]\nMass Deviation=-0.6982\nChemical Prior=0.2197\nScore: -0.4785"];
+v2 -> v1 [label="HF"];
+v3 -> v2 [label="HF"];
+v6 -> v3 [label="HF"];
+v5 -> v4 [label="C2H2"];
+v6 -> v5 [label="CF2"];
+v7 -> v6 [label="C2H4"];
+v8 -> v7 [label="C2H7N"];
+}

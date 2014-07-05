@@ -1,0 +1,7 @@
+strict digraph {
+v1 [label="C14H9O4\n242.0575 Da, 110.29 %\nMassDev: 0.6732 ppm, 0.0002 Da\ncE: [10, 20, 40]\nMass Deviation=-0.2762\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.4360\nCommonLossEdgeScorer=0.2254\nChemicalPriorEdgeScorer=0.0554\nLossSizeScorer=0.7085\nScore: 5.3865"];
+v2 [label="C15H9O5\n270.0531 Da, 20.91 %\nMassDev: 2.9819 ppm, 0.0008 Da\ncE: [10, 20, 40]\nMass Deviation=-1.7505\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=3.0691\nCommonLossEdgeScorer=1.2550\nChemicalPriorEdgeScorer=0.0213\nLossSizeScorer=-0.7932\nScore: 2.0392"];
+v3 [label="C16H12O5\n285.0758 Da, 283.02 %\nMassDev: 0.3151 ppm, 0.0001 Da\ncE: [10, 20, 40]\nMass Deviation=-0.1214\nChemical Prior=0.1546\nScore: 0.0333"];
+v2 -> v1 [label="CO"];
+v3 -> v2 [label="CH3"];
+}

@@ -1,0 +1,17 @@
+strict digraph {
+v1 [label="C4H8\n57.0705 Da, 169.44 %\nMassDev: 11.3575 ppm, 0.0006 Da\ncE: [10, 20, 40]\nCalibration: -5.40 ppm (-0.000308 m/z)\nMass Deviation=-1.6355\nCommon Fragments:=2.6097\nTreeSizeScorer=1.5000\nIntensity=4.7890\nCommonLossEdgeScorer=0.1432\nLossSizeScorer=0.7103\nScore: 8.1168"];
+v2 [label="C3H4\n41.0386 Da, 11.55 %\nMassDev: -0.5148 ppm, -0.0000 Da\ncE: [40]\nCalibration: -7.42 ppm (-0.000305 m/z)\nMass Deviation=-0.0343\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.5809\nCommonLossEdgeScorer=14.4765\nLossSizeScorer=-13.9365\nScore: 3.3240"];
+v3 [label="C3H6\n43.0545 Da, 83.38 %\nMassDev: 6.3761 ppm, 0.0003 Da\ncE: [20, 40]\nCalibration: -7.08 ppm (-0.000305 m/z)\nMass Deviation=-0.5396\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.2060\nCommonLossEdgeScorer=-1.6890\nLossSizeScorer=1.0324\nScore: 3.2473"];
+v4 [label="C6H12\n85.1011 Da, 46.06 %\nMassDev: -1.2464 ppm, -0.0001 Da\ncE: [10, 20, 40]\nCalibration: -3.69 ppm (-0.000314 m/z)\nMass Deviation=-0.1839\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=3.7182\nCommonLossEdgeScorer=-3.0815\nLossSizeScorer=-3.8981\nScore: -3.2079"];
+v5 [label="C3H4O\n57.0332 Da, 183.51 %\nMassDev: -5.0777 ppm, -0.0003 Da\ncE: [10, 20, 40]\nCalibration: -5.40 ppm (-0.000308 m/z)\nMass Deviation=-0.5754\nCommon Fragments:=2.4871\nTreeSizeScorer=1.5000\nIntensity=4.8545\nCommonLossEdgeScorer=1.8586\nLossSizeScorer=-0.2300\nScore: 9.8948"];
+v6 [label="C2H4O\n45.0338 Da, 59.75 %\nMassDev: 6.5557 ppm, 0.0003 Da\ncE: [10, 20, 40]\nCalibration: -6.78 ppm (-0.000305 m/z)\nMass Deviation=-0.5890\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=3.9322\nCommonLossEdgeScorer=-0.3282\nLossSizeScorer=0.8006\nScore: 4.0530"];
+v7 [label="C3H6O2\n75.0433 Da, 120.28 %\nMassDev: -10.2206 ppm, -0.0008 Da\ncE: [10, 20]\nCalibration: -4.15 ppm (-0.000312 m/z)\nMass Deviation=-2.0792\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.5073\nCommonLossEdgeScorer=-3.0815\nLossSizeScorer=-4.1115\nScore: -4.5274"];
+v8 [label="C21H44O3\n345.3365 Da, 0.00 %\nMassDev: 0.5604 ppm, 0.0002 Da\ncE: []\nChemical Prior=0.0821\nScore: 0.0821"];
+v4 -> v1 [label="C2H4"];
+v3 -> v2 [label="H2"];
+v4 -> v3 [label="C3H6"];
+v8 -> v4 [label="C15H32O3"];
+v7 -> v5 [label="H2O"];
+v7 -> v6 [label="CH2O"];
+v8 -> v7 [label="C18H38O"];
+}

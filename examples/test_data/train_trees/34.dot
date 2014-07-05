@@ -1,0 +1,17 @@
+strict digraph {
+v1 [label="C10H8N2\n157.0753 Da, 5.74 %\nMassDev: -4.5175 ppm, -0.0007 Da\ncE: [20, 40]\nMass Deviation=-1.8589\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.0066\nCommonLossEdgeScorer=14.4765\nChemicalPriorEdgeScorer=0.0009\nLossSizeScorer=-13.9349\nScore: 0.9275"];
+v2 [label="C8H6N2\n131.0599 Da, 1.02 %\nMassDev: -3.6387 ppm, -0.0005 Da\ncE: [40]\nMass Deviation=-1.0782\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=0.5886\nCommonLossEdgeScorer=0.1432\nChemicalPriorEdgeScorer=0.0065\nLossSizeScorer=0.7104\nScore: 0.6079"];
+v3 [label="C5H9N\n84.0812 Da, 13.91 %\nMassDev: 4.6731 ppm, 0.0004 Da\ncE: [20, 40]\nMass Deviation=-0.8394\nCommon Fragments:=2.6363\nTreeSizeScorer=1.5000\nIntensity=2.7341\nCommonLossEdgeScorer=-3.0815\nLossSizeScorer=0.5974\nScore: 3.5468"];
+v4 [label="C5H8\n69.0704 Da, 0.81 %\nMassDev: 6.9314 ppm, 0.0005 Da\ncE: [40]\nMass Deviation=-1.0838\nCommon Fragments:=2.7824\nTreeSizeScorer=1.5000\nIntensity=0.3958\nCommonLossEdgeScorer=-3.0815\nLossSizeScorer=0.2423\nScore: 0.7552"];
+v5 [label="C10H10N2\n159.0916 Da, 132.64 %\nMassDev: -0.5508 ppm, -0.0001 Da\ncE: [10, 20, 40]\nMass Deviation=-0.1498\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.5877\nCommonLossEdgeScorer=-1.0263\nChemicalPriorEdgeScorer=0.0199\nLossSizeScorer=1.0352\nScore: 4.7041"];
+v6 [label="C12H15N3\n202.1344 Da, 115.44 %\nMassDev: 2.5996 ppm, 0.0005 Da\ncE: [10, 20, 40]\nMass Deviation=-1.2266\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.4735\nCommonLossEdgeScorer=-3.0815\nChemicalPriorEdgeScorer=0.0554\nLossSizeScorer=-2.6388\nScore: -2.1806"];
+v7 [label="C26H32FN3\n406.2657 Da, 40.20 %\nMassDev: 0.9920 ppm, 0.0004 Da\ncE: [10, 20]\nMass Deviation=-0.4289\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=3.6064\nCommonLossEdgeScorer=-3.0815\nChemicalPriorEdgeScorer=0.0340\nLossSizeScorer=0.2420\nScore: 0.6095"];
+v8 [label="C29H38FN3O3\n496.2966 Da, 121.40 %\nMassDev: -0.8335 ppm, -0.0004 Da\ncE: [10, 20]\nMass Deviation=-0.3507\nChemical Prior=0.2188\nScore: -0.1319"];
+v5 -> v1 [label="H2"];
+v5 -> v2 [label="C2H4"];
+v5 -> v3 [label="C5HN"];
+v5 -> v4 [label="C5H2N2"];
+v6 -> v5 [label="C2H5N"];
+v7 -> v6 [label="C14H17F"];
+v8 -> v7 [label="C3H6O3"];
+}

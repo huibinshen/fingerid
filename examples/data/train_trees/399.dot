@@ -1,0 +1,5 @@
+strict digraph {
+v1 [label="C20H28O5\n371.1805 Da, 197.02 %\nMassDev: -6.3175 ppm, -0.0023 Da\ncE: [10, 20]\nMass Deviation=-6.1172\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.9129\nCommonLossEdgeScorer=1.8586\nChemicalPriorEdgeScorer=0.0554\nLossSizeScorer=-0.2293\nScore: 0.7179"];
+v2 [label="C20H30O6\n389.1953 Da, 211.09 %\nMassDev: 4.8129 ppm, 0.0019 Da\ncE: [10, 20]\nMass Deviation=-3.9085\nChemical Prior=0.2251\nScore: -3.6834"];
+v2 -> v1 [label="H2O"];
+}

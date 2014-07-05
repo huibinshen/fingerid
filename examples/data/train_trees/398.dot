@@ -1,0 +1,7 @@
+strict digraph {
+v1 [label="C22H29NO4S\n426.1702 Da, 1.85 %\nMassDev: -1.8033 ppm, -0.0008 Da\ncE: [20]\nMass Deviation=-0.9513\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=1.0763\nCommonLossEdgeScorer=-1.2672\nChemicalPriorEdgeScorer=0.0549\nLossSizeScorer=0.8889\nScore: 0.0391"];
+v2 [label="C25H37NO5S\n486.2299 Da, 8.83 %\nMassDev: 2.9368 ppm, 0.0014 Da\ncE: [10, 20]\nMass Deviation=-1.8253\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.3600\nCommonLossEdgeScorer=1.8586\nChemicalPriorEdgeScorer=0.0554\nLossSizeScorer=-0.2298\nScore: 2.4563"];
+v3 [label="C25H39NO6S\n504.2410 Da, 487.75 %\nMassDev: 3.8107 ppm, 0.0019 Da\ncE: [10, 20]\nMass Deviation=-2.6658\nChemical Prior=0.2237\nScore: -2.4421"];
+v2 -> v1 [label="C3H8O"];
+v3 -> v2 [label="H2O"];
+}

@@ -1,0 +1,9 @@
+strict digraph {
+v1 [label="CH3N\n30.0341 Da, 1.77 %\nMassDev: 7.6183 ppm, 0.0002 Da\ncE: [40]\nMass Deviation=-0.4351\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=1.0400\nCommonLossEdgeScorer=0.1432\nLossSizeScorer=0.7104\nScore: 1.6959"];
+v2 [label="C3H7N\n58.0659 Da, 28.43 %\nMassDev: 13.1672 ppm, 0.0008 Da\ncE: [10, 20, 40]\nMass Deviation=-2.0696\nCommon Fragments:=3.0964\nTreeSizeScorer=1.5000\nIntensity=3.3216\nCommonLossEdgeScorer=0.1432\nLossSizeScorer=0.7104\nScore: 6.7020"];
+v3 [label="C5H11N\n86.0974 Da, 227.67 %\nMassDev: 11.8617 ppm, 0.0010 Da\ncE: [10, 20, 40]\nMass Deviation=-3.1918\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=5.0318\nCommonLossEdgeScorer=-3.0815\nLossSizeScorer=-1.2840\nScore: -2.2881"];
+v4 [label="C14H22N2O\n235.1816 Da, 63.11 %\nMassDev: 4.5551 ppm, 0.0011 Da\ncE: [10, 20]\nMass Deviation=-3.2812\nChemical Prior=0.2298\nScore: -3.0514"];
+v2 -> v1 [label="C2H4"];
+v3 -> v2 [label="C2H4"];
+v4 -> v3 [label="C9H11NO"];
+}

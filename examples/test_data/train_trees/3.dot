@@ -1,0 +1,17 @@
+strict digraph {
+v1 [label="C14H13FN3\n243.1175 Da, 11.16 %\nMassDev: 3.7001 ppm, 0.0009 Da\ncE: [20, 40]\nMass Deviation=-2.3942\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.5526\nCommonLossEdgeScorer=1.2550\nChemicalPriorEdgeScorer=0.0298\nLossSizeScorer=-0.7932\nScore: 0.8874"];
+v2 [label="C13H12FN3\n230.1093 Da, 2.77 %\nMassDev: 2.2016 ppm, 0.0005 Da\ncE: [40]\nMass Deviation=-1.1557\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=1.4067\nCommonLossEdgeScorer=0.1432\nChemicalPriorEdgeScorer=0.0352\nLossSizeScorer=0.7103\nScore: 1.3771"];
+v3 [label="C15H16FN3\n258.1401 Da, 5.69 %\nMassDev: -0.0223 ppm, -0.0000 Da\ncE: [20, 40]\nMass Deviation=-0.0082\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=1.9996\nCommonLossEdgeScorer=-0.0808\nChemicalPriorEdgeScorer=0.0554\nLossSizeScorer=0.9487\nScore: 3.1521"];
+v4 [label="C17H16FN3O2\n314.1313 Da, 13.41 %\nMassDev: 4.4069 ppm, 0.0014 Da\ncE: [20, 40]\nMass Deviation=-3.1128\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.7037\nCommonLossEdgeScorer=1.3333\nChemicalPriorEdgeScorer=0.0242\nLossSizeScorer=0.0491\nScore: 1.2349"];
+v5 [label="C17H17F2N3O2\n334.1378 Da, 155.21 %\nMassDev: 4.9929 ppm, 0.0017 Da\ncE: [10, 20, 40]\nMass Deviation=-3.7799\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.7169\nCommonLossEdgeScorer=1.8586\nChemicalPriorEdgeScorer=0.0382\nLossSizeScorer=-0.2299\nScore: 2.8413"];
+v6 [label="C17H14FO3\n286.1007 Da, 8.56 %\nMassDev: 2.3741 ppm, 0.0007 Da\ncE: [20, 40]\nMass Deviation=-1.2771\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.3348\nCommonLossEdgeScorer=1.3333\nChemicalPriorEdgeScorer=0.0207\nCollision Energy=-2.3026\nLossSizeScorer=0.0491\nScore: 0.3955"];
+v7 [label="C17H15F2O3\n306.1066 Da, 7.92 %\nMassDev: 1.4612 ppm, 0.0004 Da\ncE: [40]\nMass Deviation=-0.6829\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.2711\nCommonLossEdgeScorer=-3.0815\nChemicalPriorEdgeScorer=0.0370\nLossSizeScorer=1.0338\nScore: -0.1852"];
+v8 [label="C17H19F2N3O3\n352.1487 Da, 0.00 %\nMassDev: 5.5319 ppm, 0.0019 Da\ncE: []\nChemical Prior=0.2244\nScore: 0.2244"];
+v3 -> v1 [label="CH3"];
+v3 -> v2 [label="C2H4"];
+v4 -> v3 [label="C2O2"];
+v5 -> v4 [label="HF"];
+v8 -> v5 [label="H2O"];
+v7 -> v6 [label="HF"];
+v8 -> v7 [label="H4N3"];
+}

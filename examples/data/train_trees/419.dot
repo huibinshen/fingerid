@@ -1,0 +1,3 @@
+strict digraph {
+v1 [label="C27H30O16\n611.1631 Da, 0.00 %\nMassDev: 3.9952 ppm, 0.0024 Da\ncE: []\nChemical Prior=0.2245\nScore: 0.2245"];
+}

@@ -1,0 +1,3 @@
+strict digraph {
+v1 [label="C20H32O4\n359.2175 Da, 368.34 %\nMassDev: -5.0710 ppm, -0.0018 Da\ncE: [10, 20]\nMass Deviation=-4.2835\nChemical Prior=0.2180\nScore: -4.0655"];
+}

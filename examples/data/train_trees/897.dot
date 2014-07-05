@@ -1,0 +1,11 @@
+strict digraph {
+v1 [label="C3H5NO2S\n120.0105 Da, 2.78 %\nMassDev: -7.3413 ppm, -0.0009 Da\ncE: [10, 20]\nMass Deviation=-2.5503\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=1.4112\nCommonLossEdgeScorer=1.8586\nChemicalPriorEdgeScorer=0.0554\nLossSizeScorer=-0.2299\nScore: 0.7824"];
+v2 [label="CHN\n28.0175 Da, 1.37 %\nMassDev: -25.1863 ppm, -0.0007 Da\ncE: [40]\nMass Deviation=-1.8442\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=0.8292\nCommonLossEdgeScorer=0.1432\nLossSizeScorer=0.7104\nScore: 0.0761"];
+v3 [label="C3H5N\n56.0499 Da, 227.25 %\nMassDev: 7.1832 ppm, 0.0004 Da\ncE: [10, 20, 40]\nMass Deviation=-0.8659\nCommon Fragments:=3.3424\nTreeSizeScorer=1.5000\nIntensity=5.0303\nCommonLossEdgeScorer=-0.3713\nLossSizeScorer=0.4377\nScore: 9.0732"];
+v4 [label="C3H7NO3S\n138.0209 Da, 47.42 %\nMassDev: -7.5550 ppm, -0.0010 Da\ncE: [10, 20]\nMass Deviation=-3.2962\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=3.7421\nCommonLossEdgeScorer=0.5288\nChemicalPriorEdgeScorer=-1.1269\nLossSizeScorer=1.0339\nScore: 1.1191"];
+v5 [label="C4H9NO5S\n184.0259 Da, 25.93 %\nMassDev: -8.3245 ppm, -0.0015 Da\ncE: [10]\nMass Deviation=-6.1261\nChemical Prior=-0.7869\nScore: -6.9129"];
+v4 -> v1 [label="H2O"];
+v3 -> v2 [label="C2H4"];
+v4 -> v3 [label="H2O3S"];
+v5 -> v4 [label="CH2O2"];
+}

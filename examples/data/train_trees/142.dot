@@ -1,0 +1,15 @@
+strict digraph {
+v1 [label="C12H9N\n168.0800 Da, 7.77 %\nMassDev: -4.7421 ppm, -0.0008 Da\ncE: [40]\nMass Deviation=-2.1990\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.2551\nCommonLossEdgeScorer=-0.9705\nChemicalPriorEdgeScorer=-0.0324\nLossSizeScorer=0.9341\nScore: 0.2247"];
+v2 [label="C15H16N2\n225.1388 Da, 20.67 %\nMassDev: 0.6997 ppm, 0.0002 Da\ncE: [20, 40]\nMass Deviation=-0.2841\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=3.0596\nCommonLossEdgeScorer=0.2254\nChemicalPriorEdgeScorer=0.0554\nLossSizeScorer=0.7085\nScore: 4.0022"];
+v3 [label="C16H16N2O\n253.1338 Da, 73.24 %\nMassDev: 0.9575 ppm, 0.0002 Da\ncE: [10, 20, 40]\nMass Deviation=-0.4123\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.0995\nCommonLossEdgeScorer=0.8224\nChemicalPriorEdgeScorer=0.0152\nLossSizeScorer=-0.3932\nScore: 4.3690"];
+v4 [label="C16H19N3O\n270.1610 Da, 171.13 %\nMassDev: 3.2927 ppm, 0.0009 Da\ncE: [10, 20, 40]\nMass Deviation=-2.0172\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.7971\nCommonLossEdgeScorer=-3.0815\nChemicalPriorEdgeScorer=0.0554\nLossSizeScorer=0.9950\nScore: 0.9863"];
+v5 [label="C19H19N3O2\n322.1546 Da, 18.92 %\nMassDev: -1.2005 ppm, -0.0004 Da\ncE: [10, 20, 40]\nMass Deviation=-0.5377\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.9868\nCommonLossEdgeScorer=-3.0815\nChemicalPriorEdgeScorer=0.0554\nLossSizeScorer=-3.5486\nScore: -3.8882"];
+v6 [label="C33H35N5O4\n566.2740 Da, 39.79 %\nMassDev: -3.9291 ppm, -0.0022 Da\ncE: [10, 20]\nMass Deviation=-2.6092\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=3.5980\nCommonLossEdgeScorer=1.8586\nChemicalPriorEdgeScorer=0.0227\nLossSizeScorer=-0.2296\nScore: 2.8779"];
+v7 [label="C33H37N5O5\n584.2867 Da, 301.58 %\nMassDev: -0.0751 ppm, -0.0000 Da\ncE: [10, 20]\nMass Deviation=-0.0277\nChemical Prior=0.1498\nScore: 0.1221"];
+v2 -> v1 [label="C3H7N"];
+v3 -> v2 [label="CO"];
+v4 -> v3 [label="H3N"];
+v5 -> v4 [label="C3O"];
+v6 -> v5 [label="C14H16N2O2"];
+v7 -> v6 [label="H2O"];
+}

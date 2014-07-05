@@ -1,0 +1,27 @@
+strict digraph {
+v1 [label="C6H4\n77.0384 Da, 4.35 %\nMassDev: -1.8663 ppm, -0.0001 Da\ncE: [40]\nCalibration: -2.23 ppm (-0.000172 m/z)\nMass Deviation=-0.2566\nCommon Fragments:=3.9055\nTreeSizeScorer=1.5000\nIntensity=1.7778\nCommonLossEdgeScorer=-0.0150\nLossSizeScorer=0.5949\nScore: 7.5066"];
+v2 [label="C8H6\n103.0543 Da, 1.62 %\nMassDev: 0.5066 ppm, 0.0001 Da\ncE: [40]\nCalibration: -1.43 ppm (-0.000148 m/z)\nMass Deviation=-0.0868\nCommon Fragments:=3.2332\nTreeSizeScorer=1.5000\nIntensity=0.9639\nCommonLossEdgeScorer=-3.0815\nChemicalPriorEdgeScorer=0.0554\nLossSizeScorer=1.0118\nScore: 3.5960"];
+v3 [label="C10H7N\n142.0648 Da, 1.84 %\nMassDev: -2.1414 ppm, -0.0003 Da\ncE: [40]\nCalibration: -0.78 ppm (-0.000111 m/z)\nMass Deviation=-0.6108\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=1.0698\nCommonLossEdgeScorer=14.4765\nChemicalPriorEdgeScorer=-0.0128\nLossSizeScorer=-13.9343\nScore: 1.2257"];
+v4 [label="C10H6\n127.0534 Da, 9.99 %\nMassDev: -6.2454 ppm, -0.0008 Da\ncE: [20, 40]\nCalibration: -0.98 ppm (-0.000125 m/z)\nMass Deviation=-2.1847\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.4620\nCommonLossEdgeScorer=0.8224\nChemicalPriorEdgeScorer=-0.0625\nLossSizeScorer=-0.3931\nScore: 0.8815"];
+v5 [label="C7H4\n89.0386 Da, 1.19 %\nMassDev: 0.0604 ppm, 0.0000 Da\ncE: [40]\nCalibration: -1.80 ppm (-0.000161 m/z)\nMass Deviation=-0.0086\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=0.7107\nCommonLossEdgeScorer=-0.0150\nLossSizeScorer=0.5948\nScore: 1.5193"];
+v6 [label="C9H6\n115.0534 Da, 17.95 %\nMassDev: -7.5688 ppm, -0.0009 Da\ncE: [20, 40]\nCalibration: -1.18 ppm (-0.000136 m/z)\nMass Deviation=-2.5063\nCommon Fragments:=3.2616\nTreeSizeScorer=1.5000\nIntensity=2.9435\nCommonLossEdgeScorer=-0.6484\nChemicalPriorEdgeScorer=-0.0177\nLossSizeScorer=0.7584\nScore: 5.2912"];
+v7 [label="C5H4\n65.0387 Da, 0.75 %\nMassDev: 1.2576 ppm, 0.0001 Da\ncE: [40]\nCalibration: -2.82 ppm (-0.000183 m/z)\nMass Deviation=-0.1392\nCommon Fragments:=3.6530\nTreeSizeScorer=1.5000\nIntensity=0.3338\nCommonLossEdgeScorer=-0.0150\nLossSizeScorer=0.5948\nScore: 5.9274"];
+v8 [label="C7H6\n91.0539 Da, 11.01 %\nMassDev: -3.2361 ppm, -0.0003 Da\ncE: [20, 40]\nCalibration: -1.74 ppm (-0.000159 m/z)\nMass Deviation=-0.5876\nCommon Fragments:=3.8094\nTreeSizeScorer=1.5000\nIntensity=2.5419\nCommonLossEdgeScorer=-3.0815\nLossSizeScorer=0.9844\nScore: 5.1666"];
+v9 [label="C10H9N\n144.0812 Da, 125.23 %\nMassDev: 3.1250 ppm, 0.0005 Da\ncE: [10, 20, 40]\nCalibration: -0.76 ppm (-0.000109 m/z)\nMass Deviation=-1.0001\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.5404\nCommonLossEdgeScorer=-2.1622\nChemicalPriorEdgeScorer=-0.0155\nLossSizeScorer=1.0358\nScore: 2.6359"];
+v10 [label="C3H5N\n56.0494 Da, 0.65 %\nMassDev: -2.0120 ppm, -0.0001 Da\ncE: [40]\nCalibration: -3.42 ppm (-0.000192 m/z)\nMass Deviation=-0.1966\nCommon Fragments:=3.3424\nTreeSizeScorer=1.5000\nIntensity=0.2182\nCommonLossEdgeScorer=14.4765\nLossSizeScorer=-13.9327\nScore: 5.4079"];
+v11 [label="CH3N\n30.0341 Da, 0.50 %\nMassDev: 8.1360 ppm, 0.0002 Da\ncE: [40]\nCalibration: -7.20 ppm (-0.000216 m/z)\nMass Deviation=-0.4699\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=0.0065\nCommonLossEdgeScorer=0.1432\nLossSizeScorer=0.7104\nScore: 0.6276"];
+v12 [label="C3H7N\n58.0661 Da, 244.86 %\nMassDev: 16.9737 ppm, 0.0010 Da\ncE: [10, 20, 40]\nCalibration: -3.27 ppm (-0.000190 m/z)\nMass Deviation=-3.0220\nCommon Fragments:=3.0964\nTreeSizeScorer=1.5000\nIntensity=5.0916\nCommonLossEdgeScorer=-3.0815\nLossSizeScorer=-0.8185\nScore: 2.7660"];
+v13 [label="C12H16N2\n189.1386 Da, 20.33 %\nMassDev: 0.1133 ppm, 0.0000 Da\ncE: [10]\nMass Deviation=-0.0348\nChemical Prior=0.2235\nScore: 0.1887"];
+v2 -> v1 [label="C2H2"];
+v3 -> v2 [label="C2HN"];
+v9 -> v3 [label="H2"];
+v9 -> v4 [label="H3N"];
+v6 -> v5 [label="C2H2"];
+v9 -> v6 [label="CH3N"];
+v8 -> v7 [label="C2H2"];
+v9 -> v8 [label="C3H3N"];
+v13 -> v9 [label="C2H7N"];
+v12 -> v10 [label="H2"];
+v12 -> v11 [label="C2H4"];
+v13 -> v12 [label="C9H9N"];
+}

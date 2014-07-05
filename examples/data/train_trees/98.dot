@@ -1,0 +1,9 @@
+strict digraph {
+v1 [label="C19H12\n241.1015 Da, 22.00 %\nMassDev: 1.3066 ppm, 0.0003 Da\ncE: [20, 40]\nMass Deviation=-0.5962\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=3.1109\nCommonLossEdgeScorer=0.5249\nChemicalPriorEdgeScorer=-0.0862\nLossSizeScorer=0.9697\nScore: 4.1605"];
+v2 [label="C13H8\n165.0706 Da, 88.01 %\nMassDev: 4.5848 ppm, 0.0008 Da\ncE: [10, 20, 40]\nMass Deviation=-2.0393\nCommon Fragments:=2.4914\nTreeSizeScorer=1.5000\nIntensity=4.2505\nCommonLossEdgeScorer=-3.0815\nChemicalPriorEdgeScorer=-0.0080\nLossSizeScorer=-0.3208\nScore: 2.7924"];
+v3 [label="C19H13Cl\n277.0782 Da, 175.01 %\nMassDev: 1.0942 ppm, 0.0003 Da\ncE: [10, 20]\nMass Deviation=-0.4818\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=4.8156\nCommonLossEdgeScorer=-3.0815\nChemicalPriorEdgeScorer=0.0529\nLossSizeScorer=0.7445\nScore: 2.2870"];
+v4 [label="C22H17ClN2\n345.1165 Da, 0.00 %\nMassDev: 3.5403 ppm, 0.0012 Da\ncE: []\nChemical Prior=0.0632\nScore: 0.0632"];
+v3 -> v1 [label="HCl"];
+v3 -> v2 [label="C6H5Cl"];
+v4 -> v3 [label="C3H4N2"];
+}

@@ -1,0 +1,5 @@
+strict digraph {
+v1 [label="C21H21ClFNO\n358.1369 Da, 17.97 %\nMassDev: 0.1400 ppm, 0.0001 Da\ncE: [10, 20]\nMass Deviation=-0.0522\nCommon Fragments:=-1.2626\nTreeSizeScorer=1.5000\nIntensity=2.9446\nCommonLossEdgeScorer=1.8586\nChemicalPriorEdgeScorer=0.0349\nLossSizeScorer=-0.2299\nScore: 4.7935"];
+v2 [label="C21H23ClFNO2\n376.1477 Da, 163.38 %\nMassDev: 0.8458 ppm, 0.0003 Da\ncE: [10, 20]\nMass Deviation=-0.3569\nChemical Prior=0.2185\nScore: -0.1384"];
+v2 -> v1 [label="H2O"];
+}
