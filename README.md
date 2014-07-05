@@ -2,12 +2,12 @@ FingerID 1.4
 ============
 
 This is FingerID 1.4 release. This version will only focus on the fingerprints
-prediction, without fingerprints generation and compond database retrieval.
+prediction, without fingerprints generation and compound database retrieval.
 
 This package utilize fragmentation tree, another view of MS/MS spectra, to 
 improve fingerprints prediction.
 
-The previours versions are hosted in sourceforge: http://sourceforge.net/projects/fingerid/
+The previous versions are hosted in sourceforge: http://sourceforge.net/projects/fingerid/
 
 
 Changes
@@ -93,11 +93,10 @@ Parse MS/MS spectra to the internal representation.
   trees = fgtreeparser.parse_dir(fgtree_folder)
   ```
 
-Kerenl
+Kernel
 ------
 
-Two types of kernel functions are provided. For the MS/MS data, "PPK" kernel is
-used:
+Two types of kernel functions are provided. For the MS/MS data, "PPK" kernel is used:
   
   ```python
   from fingerid.preprocess.msparser import MSParser
@@ -162,7 +161,7 @@ To combine the kernel using MKL (UNIMKL, ALIGN, ALIGNF):
 Predict
 ----------
 
-To performe cross validation on training data:
+To perform cross validation on training data:
 
   ```python
   from fingerid.model.internalCV_mp import internalCV
@@ -176,7 +175,7 @@ To performe cross validation on training data:
   internalCV(kernel, labels, n_folds, pred_f, select_c=False):
   ```
  
-To performe cross validation on training data with mulitple processes. This is
+To perform cross validation on training data with multiple processes. This is
 useful when you have many fingerprints (output) to train:
 
   ```python
