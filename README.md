@@ -15,7 +15,7 @@ Changes
 
 - Fingerprints generation and compound database retrieval are delegated to user.
 - Cleaning of the MS/MS spectra is delegated to user.
-- Merge of the MS/MS spectra us delegated to user.
+- Merge of the MS/MS spectra is delegated to user.
 - Fragmentation tree information is added in the input by kernel and multiple
 kernel learning.
 
@@ -197,8 +197,9 @@ To predict on the test data using trained models:
   ```python
   from fingerid.model.trainSVM import trainModels
   from fingerid.model.predSVM import predModels
-  models = trainModels(train_kernel, labels, select_c=False, n_p):
-  preds = predModels(test_kernel, models):
+  model_dir = "MODELS" # model_dir is the folder to put the trained models
+  models = trainModels(train_kernel, labels, model_dir, select_c=False, n_p)
+  preds = predModels(test_kernel, n_fp, model_dir) # n_fp is the number of fingerprints
   ```
 
 References
