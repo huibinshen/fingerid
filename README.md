@@ -53,7 +53,7 @@ Parse MS/MS spectra to the internal representation.
 - For the MS/MS data in the format as example dataset provided in the package:
 
   from fingerid.preprocess.msparser import MSParser
-  # ms_folder is the folder name for MS/MS data
+  \# ms_folder is the folder name for MS/MS data
   ms_list = msparser.parse_dir(ms_folder) 
 
 - For the MS/MS data downloaded from MassBank:
