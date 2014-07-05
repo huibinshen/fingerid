@@ -30,12 +30,15 @@ Dependencies
 Install
 =======
 - If you have root permission::
+
   python setup.py install
 
 - or if you do not have root permission::
+
   python setup.py install --user
 
-- or in your python script (preferred)::
+- or in your python script (preferred):
+
   import sys
   sys.path.append("path_to_this_foler")
 
