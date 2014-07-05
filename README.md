@@ -24,8 +24,8 @@ Dependencies
 
 - Python >= 2.7
 - Numpy >= 1.4.0
-- `LibSVM <http://cvxopt.org/install/index.html>_` >= 3.17 python interface
-- `cvxopt <http://cvxopt.org/install/index.html>_`, optional, only needed if using 'ALIGNF' to combine the kernels
+- [LibSVM](http://cvxopt.org/install/index.html) >= 3.17 python interface
+- [cvxopt](http://cvxopt.org/install/index.html), optional, only needed if using 'ALIGNF' to combine the kernels
 
 Install
 =======
