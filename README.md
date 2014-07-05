@@ -30,9 +30,9 @@ Dependencies
 Install
 =======
 - If you have root permission::
-
+  ```python
   python setup.py install
-
+  ```
 - or if you do not have root permission::
 
   python setup.py install --user
