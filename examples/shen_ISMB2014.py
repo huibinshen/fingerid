@@ -95,7 +95,10 @@ def trainSVM(km_f, labels_f, np = 4, c_sel=False):
 if __name__ == "__main__":
 
     # Set data info, default run on a small 50 compounds dataset.
-    # To run the 978 componds dataset, change "test_data" to "data".
+
+    # To run the 978 componds dataset, change fgtree_folder to "metlin_trees".
+    # The MS/MS used in the paper can be downloaded from METLIN database
+    # with the same metlin id used in the filenames of fgtrees.
     fgtree_folder = "test_data/train_trees/"
     ms_folder = "test_data/train_ms/"
     fingerprints = "test_data/train_output.txt" # output we want to predict
