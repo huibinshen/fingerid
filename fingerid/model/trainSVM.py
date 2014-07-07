@@ -113,7 +113,7 @@ def _trainSVM(kernel, label, model_dir, inds):
     """
     for ind in inds:
         #rint "train %d th fingerprint now ..." % (i+1)
-        prob  = svm_problem(label, kernel, isKernel=True)
+        prob = svm_problem(label, kernel, isKernel=True)
         param = svm_parameter('-t 4 -c 1 -b 0 -q')
         m = svm_train(prob, param)
         svm_save_model('%s/%d.model' % (model_dir,ind), m)
@@ -132,9 +132,9 @@ def _trainSVMBestC(k_m, label, model_dir, inds, tags):
              2**4,2**5,2**6,2**7,2**8,2**9,2**10])
         n = len(k_m)
         accs = []
-        res = result(ind)
+        #res = result(ind)
         for c in C:
-            pred = numpy.zeros(n) # store the predict output 
+            pred = numpy.zeros(n) # store the predict output
             for i in range(1,6):
                 test = tags==i
                 train = ~(tags==i)
@@ -166,15 +166,18 @@ def _trainSVMBestC(k_m, label, model_dir, inds, tags):
         kernel = numpy.append(numpy.array(
                 range(1,n+1)).reshape(n,1),k_m,1).tolist()
 
-        prob  = svm_problem(label, kernel, isKernel=True)
+        prob = svm_problem(label, kernel, isKernel=True)
         param = svm_parameter('-t 4 -c %f -b 0 -q' % best_c)
         m = svm_train(prob, param)
-        svm_save_model('%s/%d.model' % (model_dir,ind), m)        
+        svm_save_model('%s/%d.model' % (model_dir,ind), m)
 
         #res.ind = ind
         #res.acc = max(accs)
         #res.model = m
         #Queue.put(res)
+
+
+
 
 
 def _label_folds(n_x ,n):

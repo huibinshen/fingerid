@@ -11,7 +11,7 @@ import numpy
 import multiprocessing
 import warnings; warnings.filterwarnings('ignore')
 
-sys.path.append("../../fingerid_2.0/") # path to fingerid package         
+sys.path.append("../../fingerid_1.4/") # path to fingerid package         
 from fingerid.preprocess.msparser import MSParser
 from fingerid.preprocess.fgtreeparser import FragTreeParser
 from fingerid.kernel.twodgaussiankernel import TwoDGaussianKernel

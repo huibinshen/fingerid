@@ -11,8 +11,8 @@ import commands
 import numpy
 import random
 
-def internalCV(kernel, labels, n_folds, pred_f, select_c=False):
-   """
+def internalCV(kernel, labels, n_folds, select_c=False):
+    """
     Internel cross validation using train data.
 
     Parameters:
@@ -23,14 +23,18 @@ def internalCV(kernel, labels, n_folds, pred_f, select_c=False):
 
     n_folds, number of cross validations
 
-    pred_f, string, file to store predicted fingerprints in the CV
-
     select_c, bool, whether doing C selection in CV
+
+
+    Returns:
+    --------
+    pred_fp: numpy 2d array, cross validation predictions.
 
     Note:
 
     Wrtie the cross validation predition fingerprints in pred_f
     """
+
     (n_x, n_x) = kernel.shape
     (n_x, n_y) = labels.shape
     x = kernel
@@ -53,7 +57,8 @@ def internalCV(kernel, labels, n_folds, pred_f, select_c=False):
     #w = open(cv_acc_f,"w")
     #w.write(" ".join(map(str,cv_accs)))
     #w.close()
-    numpy.savetxt(pred_f, pred_fp, fmt="%d")
+    return pred_fp
+    #numpy.savetxt(pred_f, pred_fp, fmt="%d")
 
 def _CV(x, y, ind, tags, n_folds):
     """
@@ -87,45 +92,64 @@ def _CV(x, y, ind, tags, n_folds):
     acc = sum(pred == y) / float(n)
     return pred, acc
 
+
 def _CV_BestC(x, y, ind, tags, n_folds):
+
     """
-    Internel cross validation using c = 1
+    Internel cross validation using best c
     """
+
     #print "cv on %d'th fingerprint" % ind
     n = len(x)
 
-    C = numpy.array([2**-5,2**-4,2**-3,2**-2,2**-1,2**0,2**1,2**2,2**3,
-     2**4,2**5,2**6,2**7,2**8,2**9,2**10])
-    n_c = len(C)
-    pred = numpy.zeros((n_c,n))
+    pred_label = numpy.zeros(n)
     for i in range(1,n_folds+1):
-        test = tags == i
-        train = ~(tags == i)
-        test = numpy.array(range(n))[test].tolist()
-        train = numpy.array(range(n))[train].tolist()
+        # divide data
+        validate = numpy.array(tags== i)
+        test = numpy.array(tags == (i+1 if i+1<6 else 1))
+        train = numpy.array(~numpy.logical_xor(test, validate))            
 
-        train_km = x[numpy.ix_(train,train)]
-        test_km = x[numpy.ix_(test,train)]
-        train_label = y[train,:]
-        test_label = y[test,:]
+        validate_km = x[numpy.ix_(validate, train)]
+        test_km = x[numpy.ix_(test, train)]
+        train_km = x[numpy.ix_(train, train)]
+
+        n_validate = len(validate_km)
         n_train = len(train_km)
         n_test = len(test_km)
 
-        train_km = numpy.append(numpy.array(range(1,n_train+1)).reshape(n_train,1), train_km,1).tolist()
-        test_km = numpy.append(numpy.array(range(1,n_test+1)).reshape(n_test,1), test_km,1).tolist()
+        validate_km = numpy.append(numpy.array(range(1,n_validate+1)).reshape(
+                n_validate,1), validate_km,1).tolist()
+        train_km = numpy.append(numpy.array(range(1,n_train+1)).reshape(
+                n_train,1), train_km,1).tolist()
+        test_km = numpy.append(numpy.array(range(1,n_test+1)).reshape(
+                n_test,1), test_km,1).tolist()
 
-        for j in range(n_c):
-            c = C[j]
-            prob = svm_problem(train_label, train_km, isKernel=True)
-            param = svm_parameter('-t 4 -c %s -b 0 -q' % c)
-            m = svm_train(prob,param)
-            p_label, p_acc, p_val=svm_predict(test_label,test_km, m,'-b 0 -q')
-            pred[j,numpy.ix_(test)] = p_label
+        validate_y = y[validate]
+        test_y = y[test]
+        train_y = y[train]
 
-    accs = numpy.sum(pred == numpy.array(y),1) / float(n)
-    max_inds = numpy.where(max(accs)==accs)
-    ind = max_inds[0][0]
-    return pred[ind,],accs[ind]
+        # select C on validation set with best acc
+        best_acc = 0
+        best_c = 2**-5
+        best_m = None
+        for C in [2**-5,2**-4,2**-3,2**-2,2**-1,2**0,2**1,2**2,2**3,2**4,2**5,
+                  2**6,2**7,2**8,2**9,2**10]:
+            prob = svm_problem(train_y, train_km, isKernel=True)
+            param = svm_parameter('-t 4 -c %f -b 0 -q' % C)
+            m = svm_train(prob, param)
+            p_label, p_acc, p_val = svm_predict(validate_y, validate_km, 
+                                                m,'-b 0 -q')
+            acc = p_acc[0]                
+            if acc > best_acc:
+                best_c = C
+                best_m = m
+            
+        # prediction on test set with best C
+        p_label,p_acc,p_val = svm_predict(test_y, test_km, best_m,'-b 0 -q')
+        pred_label[test] = p_label
+    acc = numpy.sum(pred_label == numpy.array(y)) / float(n)
+    return pred_label, acc
+
 
 def _label_folds(n_x ,n):
     """

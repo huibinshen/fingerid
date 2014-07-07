@@ -168,11 +168,10 @@ To perform cross validation on training data:
   # kernel is the kernel matrix (numpy 2d array)
   # labels is fingerprint matrix (numpy 2d array).
   # n_folds is the number of folds used in the cross validation
-  # pred_f is the file to be written for the prediction
   # select_c is a boolean variable specify whether to do C selection in SVM.
   n_folds = 5
-  pred_f = "prediction.txt"
-  internalCV(kernel, labels, n_folds, pred_f, select_c=False)
+  cvpreds = internalCV(kernel, labels, n_folds, select_c=False)
+
   ```
  
 To perform cross validation on training data with multiple processes. This is
@@ -181,15 +180,15 @@ useful when you have many fingerprints (output) to train:
   ```python
   from fingerid.model.internalCV_mp import internalCV_mp
   # n_p is the number of processes to be used
-  internalCV_mp(kernel, labels, n_folds, pred_f, select_c=False, n_p=8)
+  cvpreds = internalCV_mp(kernel, labels, n_folds, select_c=False, n_p=8)
   ```
 
 To train the model on all the data instead of doing cross validation:
 
   ```python
   from fingerid.model.trainSVM import trainModels
-  # model_f is the file to store the trained models
-  models = trainModels(kernel, labels, select_c=False, n_p)
+  model_dir = "MODELS" # model_dir is the folder to store the trained models
+  models = trainModels(kernel, labels, model_dir, select_c=False, n_p)
   ```
 
 To predict on the test data using trained models:

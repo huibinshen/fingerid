@@ -15,7 +15,7 @@ import numpy
 import multiprocessing
 import warnings; warnings.filterwarnings('ignore')
 
-sys.path.append("../../fingerid_2.0/") # path to fingerid package         
+sys.path.append("../../fingerid_1.4") # path to fingerid package         
 from fingerid.preprocess.msparser import MSParser
 from fingerid.preprocess.fgtreeparser import FragTreeParser
 from fingerid.kernel.twodgaussiankernel import TwoDGaussianKernel
@@ -23,6 +23,7 @@ from fingerid.kernel.fgtreekernel import FragTreeKernel
 from fingerid.kernel.mskernel import Kernel
 from fingerid.kernel.mkl import mkl
 from fingerid.model.internalCV_mp import internalCV_mp
+from fingerid.model.internalCV import internalCV
 
 from fingerid.model.trainSVM import trainModels
 from fingerid.model.predSVM import predModels
@@ -54,7 +55,7 @@ def compute_kernel(km_f, ms_folder, fgtree_folder):
         kernel = FragTreeKernel()
         train_km = kernel.compute_kernel(trees,km_type)
         kernel.write_kernel(train_km, km_f)
-    print "Writing %s kernel %s" % (km_type, km_f)
+    print "Writing %s kernel to %s" % (km_type, km_f)
 
 
 def kernelMP(types, ms_folder, fgtree_folder):
@@ -86,7 +87,9 @@ def trainSVM(km_f, labels_f, np = 4, c_sel=False):
     # Use n_p process to do the cross validation on one computer.
     # For larger task, consider using computing clusters to parallel all
     # the processes.
-    internalCV_mp(train_km, labels, 5, cvpred_f, select_c=c_sel, n_p=np)
+    #cvpreds = internalCV(train_km, labels, 5, select_c=c_sel)
+    cvpreds = internalCV_mp(train_km, labels, 5, select_c=c_sel, n_p=np)
+    numpy.savetxt(cvpred_f, cvpreds, fmt="%d")
     print "Writting prediction in %s" % cvpred_f
 
 if __name__ == "__main__":
