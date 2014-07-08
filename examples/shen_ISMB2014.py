@@ -18,16 +18,14 @@ import warnings; warnings.filterwarnings('ignore')
 sys.path.append("../../fingerid_1.4") # path to fingerid package         
 from fingerid.preprocess.msparser import MSParser
 from fingerid.preprocess.fgtreeparser import FragTreeParser
+from fingerid.kernel.mskernel import Kernel
 from fingerid.kernel.twodgaussiankernel import TwoDGaussianKernel
 from fingerid.kernel.fgtreekernel import FragTreeKernel
-from fingerid.kernel.mskernel import Kernel
 from fingerid.kernel.mkl import mkl
 from fingerid.model.internalCV_mp import internalCV_mp
 from fingerid.model.internalCV import internalCV
-
 from fingerid.model.trainSVM import trainModels
 from fingerid.model.predSVM import predModels
-from fingerid.kernel.twodgaussiankernel import TwoDGaussianKernel
 
 def compute_kernel(km_f, ms_folder, fgtree_folder):
     """ compute the kernel indicated by keyword """
