@@ -4,7 +4,6 @@ The class for fragmentation tree.
 =================================
 
 """
-
 import re
 
 class FragTree:

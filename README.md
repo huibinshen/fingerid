@@ -128,7 +128,7 @@ For fragmentation tree:
   ```python
   kernel = FragTreeKernel()
   # Kernel can be "NB","NI","LB","LC","LI","RLB","RLI","CPC","CP2","CPK","CSC"
-  train_tree_km = kernel.compute_kernel(train_trees, "NB")
+  train_tree_km = kernel.compute_train_kernel(train_trees, "NB")
   ```  
 
 - When have test data for fragmentation trees
@@ -137,13 +137,11 @@ For fragmentation tree:
   test_trees = fgtreeparser.parse_dir(test_fgtree_folder)  
   n_train = len(train_trees)
   n_test = len(test_trees)
-  n = n_train + n_test
-  trees = train_trees + test_trees
+
   kernel = FragTreeKernel()
   # Kernel can be "NB","NI","LB","LC","LI","RLB","RLI","CPC","CP2","CPK","CSC"
-  tree_km = kernel.compute_kernel(trees, "NB")
-  train_tree_km = tree_km[0:n_train, 0:n_train]
-  test_tree_km = tree_km[n_train:n, 0:n_train]
+  train_tree_km = kernel.compute_train_kernel(train_trees, "NB")
+  test_tree_km = kernel.compute_test_kernel(test_trees, train_trees, "NB")
   ```
 
 To combine the kernel using MKL (UNIMKL, ALIGN, ALIGNF):

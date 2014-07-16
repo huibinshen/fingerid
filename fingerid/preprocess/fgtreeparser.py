@@ -28,15 +28,17 @@ class FragTreeParser:
             dir_path = dir_path + "/"
         # invoke parse file for every file in the dir_path directory           
         files = commands.getoutput("ls %s" % dir_path).split()
+        count = 0
         for f in files:
             tree = self.parse_file(dir_path + f)
             tree_list.append(tree)
+            count = count + 1
         return tree_list
 
     def parse_file(self, f_path="NULL"):
         """ parse file into FragTree instance """
         if f_path == "NULL":
-            raise Exception("ERROR: please specify tandam MS/MS file path")
+            raise Exception("ERROR: please specify fgtree file path")
         return self._parse_dot_file(f_path)
 
     def _parse_dot_file(self, f_path):
