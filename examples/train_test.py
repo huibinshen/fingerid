@@ -31,7 +31,7 @@ if __name__ == "__main__":
     print "parse data\n"
     fgtreeparser = FragTreeParser()
     msparser = MSParser()
-    
+
     train_ms = msparser.parse_dir("test_data/train_ms/")
     test_ms = msparser.parse_dir("test_data/test_ms/")
     train_trees = fgtreeparser.parse_dir("test_data/train_trees")
@@ -44,7 +44,8 @@ if __name__ == "__main__":
     all_trees = train_trees + test_trees
 
     # compute train and test kernels
-    types = ["PPK","NB","NI","LB","LC","LI","RLB","RLI","CPC","CP2","CPK","CSC"]
+    #types = ["PPK","NB","NI","LB","LC","LI","RLB","RLI","CPC","CP2","CPK","CSC"]
+    types = ["CPC","CP2","CSC","CPK"]
     train_km_list = []
     test_km_list = []
     # can use mulitp process
@@ -55,16 +56,21 @@ if __name__ == "__main__":
             si = 100000
             # shoud select sm and si by cross validation
             kernel = TwoDGaussianKernel(sm, si)
-            km = kernel.compute_train_kernel(all_ms)
-            train_km = km[0:n_train, 0:n_train]
-            test_km = km[n_train:n, 0:n_train]          
+            train_km = kernel.compute_train_kernel(train_ms)
+            test_km = kernel.compute_test_kernel(test_ms, train_ms)
             train_km_list.append(train_km)
             test_km_list.append(test_km)
         else:
             kernel = FragTreeKernel()
-            km = kernel.compute_kernel(all_trees,ty) 
-            train_km = km[0:n_train, 0:n_train]
-            test_km = km[n_train:n, 0:n_train]          
+            train_km = kernel.compute_train_kernel(train_trees, ty)
+            if ty == "CPK": # to use CPK kernel, sm, and si are needed
+                sm = 0.00001
+                si = 100000
+                train_km = kernel.compute_train_kernel(train_trees, ty, sm, si)
+                test_km = kernel.compute_test_kernel(test_trees, train_trees, ty, sm, si)
+            else:
+                train_km = kernel.compute_train_kernel(train_trees, ty)
+                test_km = kernel.compute_test_kernel(test_trees, train_trees, ty)
             train_km_list.append(train_km)
             test_km_list.append(test_km)
 

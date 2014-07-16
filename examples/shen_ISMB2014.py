@@ -51,7 +51,7 @@ def compute_kernel(km_f, ms_folder, fgtree_folder):
         kernel.write_kernel(train_km, km_f)
     else:
         kernel = FragTreeKernel()
-        train_km = kernel.compute_kernel(trees,km_type)
+        train_km = kernel.compute_train_kernel(trees,km_type)
         kernel.write_kernel(train_km, km_f)
     print "Writing %s kernel to %s" % (km_type, km_f)
 
