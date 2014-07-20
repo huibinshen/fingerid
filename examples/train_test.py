@@ -24,6 +24,7 @@ from fingerid.model.trainSVM import trainModels
 from fingerid.model.predSVM import predModels
 from fingerid.kernel.twodgaussiankernel import TwoDGaussianKernel
 
+from fingerid.preprocess.util import writeIDs
 
 if __name__ == "__main__":
     """ Another pipeline when you have train/test instead of cross validation""" 
@@ -39,10 +40,11 @@ if __name__ == "__main__":
     labels = numpy.loadtxt("test_data/train_output.txt")
     n_train, n_fp = labels.shape
     n_test = len(test_trees)
-    n = n_test + n_train
-    all_ms = train_ms + test_ms
-    all_trees = train_trees + test_trees
 
+    # output the files corresponding to the spectra and fragmentation trees  
+    writeIDs("spectras.txt",train_ms)
+    writeIDs("fgtrees.txt", train_trees)
+    sys.exit()
     # compute train and test kernels
     #types = ["PPK","NB","NI","LB","LC","LI","RLB","RLI","CPC","CP2","CPK","CSC"]
     types = ["CPC","CP2","CSC","CPK"]
@@ -66,8 +68,8 @@ if __name__ == "__main__":
             if ty == "CPK": # to use CPK kernel, sm, and si are needed
                 sm = 0.00001
                 si = 100000
-                train_km = kernel.compute_train_kernel(train_trees, ty, sm, si)
-                test_km = kernel.compute_test_kernel(test_trees, train_trees, ty, sm, si)
+                train_km = kernel.compute_train_kernel(train_trees, ty, sm=sm, si=si)
+                test_km = kernel.compute_test_kernel(test_trees, train_trees, ty, sm=sm, si=si)
             else:
                 train_km = kernel.compute_train_kernel(train_trees, ty)
                 test_km = kernel.compute_test_kernel(test_trees, train_trees, ty)

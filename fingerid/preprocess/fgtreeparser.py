@@ -44,7 +44,7 @@ class FragTreeParser:
     def _parse_dot_file(self, f_path):
 #        print "Parse dot file:", f_path
         fgtree = FragTree()
-        fgtree.path = f_path
+        fgtree.f_name = f_path
         nodes = {}
         edges = []
 

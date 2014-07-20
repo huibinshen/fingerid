@@ -13,7 +13,7 @@ class FragTree:
         self.nodes = {} # id as key, node as value
         self.leaves = [] # a list of ids which are leaves
         self.root = None # a node instance
-        self.path = "" # the file location for the fgtree
+        self.f_name = "" # the file location for to the fgtree
         
 
     class Node:

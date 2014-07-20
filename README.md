@@ -157,7 +157,7 @@ To combine the kernel using MKL (UNIMKL, ALIGN, ALIGNF):
   ```
 
 Predict
-----------
+-------
 
 To perform cross validation on training data:
 
@@ -197,6 +197,17 @@ To predict on the test data using trained models:
   model_dir = "MODELS" # model_dir is the folder to put the trained models
   trainModels(train_kernel, labels, model_dir, select_c=False, n_p)
   preds = predModels(test_kernel, n_fp, model_dir) # n_fp is the number of fingerprints
+  ```
+
+Tools
+-----
+
+It's may be necessary to check whether the spectra and the fragmentation trees are in the same order as wanted. To output the order the spectra files and fragmentation trees files which have been parsed:
+
+  ```python
+  from fingerid.preprocess.util import writeIDs  
+  writeIDs("spectras.txt",train_ms)
+  writeIDs("fgtrees.txt", train_trees)
   ```
 
 References
