@@ -202,7 +202,7 @@ To predict on the test data using trained models:
 Tools
 -----
 
-It's may be necessary to check whether the spectra and the fragmentation trees are in the same order as wanted. To output the order the spectra files and fragmentation trees files which have been parsed:
+It's may be necessary to check whether the spectra and the fragmentation trees are in the same order as wanted. To output the order of the spectra files and fragmentation trees files which have been parsed:
 
   ```python
   from fingerid.preprocess.util import writeIDs  
