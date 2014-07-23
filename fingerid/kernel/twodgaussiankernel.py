@@ -92,13 +92,16 @@ class TwoDGaussianKernel(Kernel):
                 j_mloss = self._mloss_to_matrix(spec_j, spec_j.precursor)
                 km_value_mloss = self._gaussprodmixture(i_mloss,j_mloss,sm,si)
                 
-                km_ii = self._gaussprodmixture(i_peaks,i_peaks,sm,si) + \
-                        self._gaussprodmixture(i_mloss,i_mloss,sm,si)
-                km_jj = self._gaussprodmixture(j_peaks,j_peaks,sm,si) + \
-                        self._gaussprodmixture(j_mloss,j_mloss,sm,si)
+                km_peaks_ii = self._gaussprodmixture(i_peaks,i_peaks,sm,si)
+                km_mloss_ii = self._gaussprodmixture(i_mloss,i_mloss,sm,si)
 
-                km[i,j] = km_value_peaks + km_value_mloss
-                km[i,j] = km[i,j] / numpy.sqrt(km_ii*km_jj)
+                km_peaks_jj = self._gaussprodmixture(j_peaks,j_peaks,sm,si)
+                km_mloss_jj = self._gaussprodmixture(j_mloss,j_mloss,sm,si)
+
+                km_peaks_ij = km_value_peaks / numpy.sqrt(km_peaks_ii*km_peaks_jj)
+                km_mloss_ij = km_value_mloss / numpy.sqrt(km_mloss_ii*km_mloss_jj)
+                # normalize km
+                km[i,j] =  (km_peaks_ij + km_mloss_ij) / 2
         return km
 
 
@@ -172,6 +175,6 @@ class TwoDGaussianKernel(Kernel):
         #constant = 1.0/(N1*N2)*0.25/(numpy.pi*numpy.sqrt(sm))
         mass_term = 1.0/sm * numpy.power(numpy.kron(X1[:,0].flatten(),numpy.ones(N2)) - numpy.kron(numpy.ones(N1),X2[:,0].flatten()),2)
         inte_term = 1.0/si * numpy.power(numpy.kron(X1[:,1].flatten(),numpy.ones(N2)) - numpy.kron(numpy.ones(N1),X2[:,1].flatten()),2)
-        return constant*sum(numpy.exp(-0.25*(mass_term + inte_term)))
+        return constant*sum(numpy.exp(-0.5*(mass_term + inte_term)))
         #return constant*sum(numpy.exp(-0.25*(mass_term)))
 

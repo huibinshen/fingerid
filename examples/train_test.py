@@ -44,10 +44,9 @@ if __name__ == "__main__":
     # output the files corresponding to the spectra and fragmentation trees  
     writeIDs("spectras.txt",train_ms)
     writeIDs("fgtrees.txt", train_trees)
-    sys.exit()
+
     # compute train and test kernels
-    #types = ["PPK","NB","NI","LB","LC","LI","RLB","RLI","CPC","CP2","CPK","CSC"]
-    types = ["CPC","CP2","CSC","CPK"]
+    types = ["PPK","NB","NI","LB","LC","LI","RLB","RLI","CPC","CP2","CPK","CSC"]
     train_km_list = []
     test_km_list = []
     # can use mulitp process
