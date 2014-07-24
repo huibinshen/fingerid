@@ -1177,7 +1177,8 @@ class FragTreeKernel(Kernel):
 
 
     def _gaussproduct(self,m1,m2,i1,i2,sm,si):
-        return 1/numpy.sqrt((4*numpy.pi*si*sm))*numpy.exp(-0.25*numpy.square(i1-i2)/numpy.square(si)-0.25*numpy.square(m1-m2)/numpy.square(sm))
+        #return 1/numpy.sqrt((4*numpy.pi*si*sm))*numpy.exp(-0.25*numpy.square(i1-i2)/numpy.sqrt(si)-0.25*numpy.square(m1-m2)/numpy.sqrt(sm))
+        return 0.25/(numpy.pi*numpy.sqrt(sm*si))*numpy.exp(-0.25*numpy.square(i1-i2)/si-0.25*numpy.square(m1-m2)/sm)
 
     def _normalize_km(self, km):
         n = len(km)

@@ -15,8 +15,8 @@ class TwoDGaussianKernel(Kernel):
 
         """        
         Kernel.__init__(self)
-        self.sm = sm # standard variance for mass
-        self.si = si # standard variance for intensity
+        self.sm = sm # variance for mass
+        self.si = si # variance for intensity
 
     def compute_train_kernel(self, spectra):
         """ 
@@ -172,9 +172,8 @@ class TwoDGaussianKernel(Kernel):
         if N1 == 0 or N2 == 0:
             raise Exception("[ERROR]:No peaks when computing the kernel.(try not clean the peaks)")
         constant = 1.0/(N1*N2)*0.25/(numpy.pi*numpy.sqrt(sm*si))
-        #constant = 1.0/(N1*N2)*0.25/(numpy.pi*numpy.sqrt(sm))
         mass_term = 1.0/sm * numpy.power(numpy.kron(X1[:,0].flatten(),numpy.ones(N2)) - numpy.kron(numpy.ones(N1),X2[:,0].flatten()),2)
         inte_term = 1.0/si * numpy.power(numpy.kron(X1[:,1].flatten(),numpy.ones(N2)) - numpy.kron(numpy.ones(N1),X2[:,1].flatten()),2)
-        return constant*sum(numpy.exp(-0.5*(mass_term + inte_term)))
-        #return constant*sum(numpy.exp(-0.25*(mass_term)))
+        #return constant*sum(numpy.exp(-0.5*(mass_term + inte_term)))
+        return constant*sum(numpy.exp(-0.25*(mass_term)))
 
