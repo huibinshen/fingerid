@@ -174,6 +174,6 @@ class TwoDGaussianKernel(Kernel):
         constant = 1.0/(N1*N2)*0.25/(numpy.pi*numpy.sqrt(sm*si))
         mass_term = 1.0/sm * numpy.power(numpy.kron(X1[:,0].flatten(),numpy.ones(N2)) - numpy.kron(numpy.ones(N1),X2[:,0].flatten()),2)
         inte_term = 1.0/si * numpy.power(numpy.kron(X1[:,1].flatten(),numpy.ones(N2)) - numpy.kron(numpy.ones(N1),X2[:,1].flatten()),2)
-        #return constant*sum(numpy.exp(-0.5*(mass_term + inte_term)))
-        return constant*sum(numpy.exp(-0.25*(mass_term)))
+        return constant*sum(numpy.exp(-0.25*(mass_term + inte_term)))
+        #return constant*sum(numpy.exp(-0.25*(mass_term)))
 
