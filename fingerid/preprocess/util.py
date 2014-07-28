@@ -1,3 +1,4 @@
+import numpy 
 
 def writeIDs(fname, objects):
     """
@@ -20,3 +21,12 @@ def sortbyfilenames(spectra, fnames):
     """ sort the spectrum in spectra by ids """
     return [spectra[i] for i in sorted(range(len(fnames)), key=lambda k: fnames[k])]
 
+def centerTestKernel(km):
+    """ centering test kernel when test kernel is not symmetric """
+    nx, ny = km.shape
+    ckm = numpy.zeros((nx,ny))
+    for i in range(nx):
+        for j in range(i,ny):
+            ckm[i,j] = km[i,j] - numpy.mean(km[:,j]) - numpy.mean(km[i,:]) + numpy.mean(km)
+            ckm[j,i] = ckm[i,j]
+    return ckm
