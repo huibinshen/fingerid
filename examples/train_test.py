@@ -25,6 +25,7 @@ from fingerid.model.predSVM import predModels
 from fingerid.kernel.twodgaussiankernel import TwoDGaussianKernel
 
 from fingerid.preprocess.util import writeIDs
+from fingerid.preprocess.util import centerTestKernel
 
 if __name__ == "__main__":
     """ Another pipeline when you have train/test instead of cross validation""" 
@@ -80,7 +81,7 @@ if __name__ == "__main__":
     train_ckm, w = mkl(train_km_list, labels, 'ALIGN')
     test_ckm = numpy.zeros((n_test, n_train))
     for i in range(len(types)):
-        test_ckm + w[i]*test_km_list[i]
+        test_ckm + w[i]*centerTestKernel(test_km_list[i])
 
     # train with 4 processe
     print "train models and make prediction"
