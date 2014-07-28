@@ -11,6 +11,7 @@ import numpy
  
 from spectrum import Spectrum
 from parser import Parser
+from util import sortbyfilenames
 
 class MassBankParser(Parser):
     """
@@ -34,11 +35,12 @@ class MassBankParser(Parser):
 
         # invoke parse file for every file in the dir_path directory
         files = commands.getoutput("ls %s" % dir_path).split()
+        fnames = []
         for f in files:
             spec = self.parse_file(dir_path + f)
+            fnames.append(spec.fname)
             spec_list.append(spec)
-
-        return spec_list
+        return sortbyfilenames(spec_list,fnames)
 
     def _parse_massbank_file(self, f_path):
         print "Parse file:",f_path

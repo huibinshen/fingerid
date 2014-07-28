@@ -13,6 +13,7 @@ import os
 import numpy
 
 from fgtree import FragTree
+from util import sortbyfilenames
 
 class FragTreeParser:
     
@@ -33,7 +34,7 @@ class FragTreeParser:
             tree = self.parse_file(dir_path + f)
             tree_list.append(tree)
             count = count + 1
-        return tree_list
+        return sortbyfilenames(tree_list, files)
 
     def parse_file(self, f_path="NULL"):
         """ parse file into FragTree instance """

@@ -11,6 +11,7 @@ import numpy
 
 from spectrum import Spectrum
 from parser import Parser
+from util import sortbyfilenames
 
 class MSParser(Parser):
     """
@@ -38,7 +39,7 @@ class MSParser(Parser):
         for f in files:
             spec = self.parse_file(dir_path + f)
             spec_list.append(spec)
-        return spec_list
+        return sortbyfilenames(spec_list, files)
 
     def _parse_ms_file(self, f_path):
 #        print "Parse file:",f_path

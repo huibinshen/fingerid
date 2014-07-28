@@ -16,3 +16,7 @@ def writeIDs(fname, objects):
     w.write("\n".join(files))
     w.close()
 
+def sortbyfilenames(spectra, fnames):
+    """ sort the spectrum in spectra by ids """
+    return [spectra[i] for i in sorted(range(len(fnames)), key=lambda k: fnames[k])]
+

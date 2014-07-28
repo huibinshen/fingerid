@@ -12,6 +12,7 @@ import xml.etree.ElementTree as ET
 
 from spectrum import Spectrum
 from parser import Parser
+from util import sortbyfilenames
 
 class MetlinParser(Parser):
     """
@@ -62,9 +63,7 @@ class MetlinParser(Parser):
             specs = self.parse_file(f, kegg_mass, kegg_inchi)
             spec_list = spec_list + specs
 
-        # sort by metlin id
-        spec_list.sort(key=lambda x: x.metlin_id)
-        return spec_list
+        return sortbyfilenames(spec_list, files)
 
     def _parse_metlin_file(self, f_path, kegg_mass, inchi):
         tree = ET.parse(f_path)
