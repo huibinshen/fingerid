@@ -26,7 +26,6 @@ def centerTestKernel(km):
     nx, ny = km.shape
     ckm = numpy.zeros((nx,ny))
     for i in range(nx):
-        for j in range(i,ny):
+        for j in range(ny):
             ckm[i,j] = km[i,j] - numpy.mean(km[:,j]) - numpy.mean(km[i,:]) + numpy.mean(km)
-            ckm[j,i] = ckm[i,j]
     return ckm
