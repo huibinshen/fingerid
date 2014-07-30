@@ -87,7 +87,7 @@ def trainSVM(km_f, labels_f, np = 4, c_sel=False):
     # the processes.
     #cvpreds = internalCV(train_km, labels, 5, select_c=c_sel)
 
-    prob = True # set prob = True if want probability output
+    prob = False # set prob = True if want probability output
     cvpreds = internalCV_mp(train_km, labels, 5, select_c=c_sel, n_p=np, prob=prob)
     numpy.savetxt(cvpred_f, cvpreds, fmt="%.4f")
     print "Writting prediction in %s" % cvpred_f
