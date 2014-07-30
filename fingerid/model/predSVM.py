@@ -6,7 +6,7 @@ Predict the fingerprints using trained SVM models
 from svmutil import *
 import numpy
 
-def predModels(test_km, n_fp, model_dir):
+def predModels(test_km, n_fp, model_dir, prob=False):
     """
     Using trained models in model_dir and testing kernels to predict fingerprits
     
@@ -21,6 +21,7 @@ def predModels(test_km, n_fp, model_dir):
     Returns:
     -------
     pred_fp: numpy.2d array, n_test * n_fp. Predicted fingerprints matrix
+             or probabilites of positive label
 
     """
     n_test = len(test_km)
@@ -33,7 +34,11 @@ def predModels(test_km, n_fp, model_dir):
     for i in range(n_fp):
         model_f = "%s/%d.model" % (model_dir, i)
         m = svm_load_model(model_f)
-        p_label, p_acc, p_val = svm_predict(dummy_y, test_km, m, '-b 0 -q')
-        pred_fp[:,i] = p_label
+        if prob:
+            p_label, p_acc, p_val = svm_predict(dummy_y, test_km, m, '-b 1 -q')
+            pred_fp[:,i] = [p[0] for p in p_val]
+        else:
+            p_label, p_acc, p_val = svm_predict(dummy_y, test_km, m, '-b 0 -q')
+            pred_fp[:,i] = p_label
     return pred_fp
     

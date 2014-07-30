@@ -86,8 +86,10 @@ def trainSVM(km_f, labels_f, np = 4, c_sel=False):
     # For larger task, consider using computing clusters to parallel all
     # the processes.
     #cvpreds = internalCV(train_km, labels, 5, select_c=c_sel)
-    cvpreds = internalCV_mp(train_km, labels, 5, select_c=c_sel, n_p=np)
-    numpy.savetxt(cvpred_f, cvpreds, fmt="%d")
+
+    prob = True # set prob = True if want probability output
+    cvpreds = internalCV_mp(train_km, labels, 5, select_c=c_sel, n_p=np, prob=prob)
+    numpy.savetxt(cvpred_f, cvpreds, fmt="%.4f")
     print "Writting prediction in %s" % cvpred_f
 
 if __name__ == "__main__":
@@ -110,6 +112,7 @@ if __name__ == "__main__":
 
     # Predict for individual kernel, using np processes
     # In the training, doing selection of best C in SVM.
+
     for km_f in km_fs:        
         trainSVM(km_f, fingerprints, np=4, c_sel=True)
     print

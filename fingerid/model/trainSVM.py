@@ -19,7 +19,7 @@ from svmutil import *
 #        self.model = None # returned by svm_train
 
 
-def trainModels(kernel, labels, model_dir, select_c=False, n_p=4):
+def trainModels(kernel, labels, model_dir, select_c=False, n_p=4, prob=False):
     """Train SVM on all the training data.
     All the fingeprints will be trained by n_p processes.
     Use 5 fold cross validation to find the best C to train SVM.
@@ -35,6 +35,8 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4):
     select_c: bool, doing C selection or not. Default setting c = 1.
 
     n_p: int, number of processes to use.
+
+    prod: boolean, set to True if want probability output.
 
     Note:
     -----
@@ -64,14 +66,14 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4):
         y = labels[:,i]
         if select_c:
             p = multiprocessing.Process(target=_trainSVMBestC, 
-                  args=(x, y, model_dir, task_dict[i], tags))
+                                        args=(x, y, model_dir, task_dict[i], tags, prob))
             p.start()
             ps.append(p)
         else:
             x = numpy.append(numpy.array(
                     range(1,n_x+1)).reshape(n_x,1),x,1).tolist()
             p = multiprocessing.Process(target=_trainSVM, 
-                  args=(x, y, model_dir, task_dict[i]))
+                                        args=(x, y, model_dir, task_dict[i], prob))
             p.start()
             ps.append(p)
     for p in ps:
@@ -107,22 +109,27 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4):
 #            cv_accs.append(cv_acc)
 
 
-def _trainSVM(kernel, label, model_dir, inds):
+def _trainSVM(kernel, label, model_dir, inds, pb):
     """
     Train the svm with c = 1.
     """
     for ind in inds:
         #rint "train %d th fingerprint now ..." % (i+1)
         prob = svm_problem(label, kernel, isKernel=True)
-        param = svm_parameter('-t 4 -c 1 -b 0 -q')
-        m = svm_train(prob, param)
-        svm_save_model('%s/%d.model' % (model_dir,ind), m)
+        if pb:
+            param = svm_parameter('-t 4 -c 1 -b 1 -q')
+            m = svm_train(prob, param)
+            svm_save_model('%s/%d.model' % (model_dir,ind), m)
+        else:
+            param = svm_parameter('-t 4 -c 1 -b 0 -q')
+            m = svm_train(prob, param)
+            svm_save_model('%s/%d.model' % (model_dir,ind), m)
         #res = result(ind)
         #res.ind = ind
         #res.model = m
         #Queue.put(res)
 
-def _trainSVMBestC(k_m, label, model_dir, inds, tags):
+def _trainSVMBestC(k_m, label, model_dir, inds, tags, pb):
     """
     Train the svm with the best C. C is selected from 5 folds cv.
     """
@@ -166,10 +173,18 @@ def _trainSVMBestC(k_m, label, model_dir, inds, tags):
         kernel = numpy.append(numpy.array(
                 range(1,n+1)).reshape(n,1),k_m,1).tolist()
 
-        prob = svm_problem(label, kernel, isKernel=True)
-        param = svm_parameter('-t 4 -c %f -b 0 -q' % best_c)
-        m = svm_train(prob, param)
-        svm_save_model('%s/%d.model' % (model_dir,ind), m)
+        if pb:
+            prob = svm_problem(label, kernel, isKernel=True)
+            param = svm_parameter('-t 4 -c %f -b 1 -q' % best_c)
+            m = svm_train(prob, param)
+            svm_save_model('%s/%d.model' % (model_dir,ind), m)
+        else:
+            prob = svm_problem(label, kernel, isKernel=True)
+            param = svm_parameter('-t 4 -c %f -b 0 -q' % best_c)
+            m = svm_train(prob, param)
+            svm_save_model('%s/%d.model' % (model_dir,ind), m)
+
+
 
         #res.ind = ind
         #res.acc = max(accs)

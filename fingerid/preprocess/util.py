@@ -29,3 +29,4 @@ def centerTestKernel(km):
         for j in range(ny):
             ckm[i,j] = km[i,j] - numpy.mean(km[:,j]) - numpy.mean(km[i,:]) + numpy.mean(km)
     return ckm
+

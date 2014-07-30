@@ -11,7 +11,7 @@ import commands
 import numpy
 import random
 
-def internalCV(kernel, labels, n_folds, select_c=False):
+def internalCV(kernel, labels, n_folds, select_c=False, prob=False):
     """
     Internel cross validation using train data.
 
@@ -25,13 +25,16 @@ def internalCV(kernel, labels, n_folds, select_c=False):
 
     select_c, bool, whether doing C selection in CV
 
+    prob, boolean, probability output if prob=True.
+
 
     Returns:
     --------
-    pred_fp: numpy 2d array, cross validation predictions.
+    pred_fp: numpy 2d array, cross validation predictions or probability of
+             positive label if prob=True.
 
     Note:
-
+    -----
     Wrtie the cross validation predition fingerprints in pred_f
     """
 
@@ -46,11 +49,11 @@ def internalCV(kernel, labels, n_folds, select_c=False):
     for i in range(n_y):
         y = labels[:,i]
         if select_c:
-            pred_fp_i, cv_acc = _CV_BestC(x, y, i, tags, n_folds)
+            pred_fp_i, cv_acc = _CV_BestC(x, y, i, tags, n_folds, prob)
             pred_fp[:,i] = pred_fp_i
     #        cv_accs.append(cv_acc)
         else:
-            pred_fp_i, cv_acc = _CV(x, y, i, tags, n_folds)
+            pred_fp_i, cv_acc = _CV(x, y, i, tags, n_folds, prob)
             pred_fp[:,i] = pred_fp_i
     #        cv_accs.append(cv_acc)
 
@@ -60,7 +63,7 @@ def internalCV(kernel, labels, n_folds, select_c=False):
     return pred_fp
     #numpy.savetxt(pred_f, pred_fp, fmt="%d")
 
-def _CV(x, y, ind, tags, n_folds):
+def _CV(x, y, ind, tags, n_folds, pb):
     """
     Internel cross validation using c = 1
     """
@@ -84,16 +87,22 @@ def _CV(x, y, ind, tags, n_folds):
         test_km = numpy.append(numpy.array(range(1,n_test+1)).reshape(n_test,1), test_km,1).tolist()
 
         prob = svm_problem(train_label, train_km, isKernel=True)
-        param = svm_parameter('-t 4 -c 1 -b 0 -q')
-        m = svm_train(prob,param)
-        p_label, p_acc, p_val=svm_predict(test_label,test_km, m,'-b 0 -q')
-        pred[numpy.ix_(test)] = p_label
+        if pb:
+            param = svm_parameter('-t 4 -c 1 -b 1 -q')
+            m = svm_train(prob,param)
+            p_label, p_acc, p_val=svm_predict(test_label,test_km, m,'-b 1 -q')
+            pred[numpy.ix_(test)] = [p[0] for p in p_val]
+        else:
+            param = svm_parameter('-t 4 -c 1 -b 0 -q')
+            m = svm_train(prob,param)
+            p_label, p_acc, p_val=svm_predict(test_label,test_km, m,'-b 0 -q')
+            pred[numpy.ix_(test)] = p_label
 
     acc = sum(pred == y) / float(n)
     return pred, acc
 
 
-def _CV_BestC(x, y, ind, tags, n_folds):
+def _CV_BestC(x, y, ind, tags, n_folds, pb):
 
     """
     Internel cross validation using best c
@@ -135,9 +144,15 @@ def _CV_BestC(x, y, ind, tags, n_folds):
         for C in [2**-5,2**-4,2**-3,2**-2,2**-1,2**0,2**1,2**2,2**3,2**4,2**5,
                   2**6,2**7,2**8,2**9,2**10]:
             prob = svm_problem(train_y, train_km, isKernel=True)
-            param = svm_parameter('-t 4 -c %f -b 0 -q' % C)
-            m = svm_train(prob, param)
-            p_label, p_acc, p_val = svm_predict(validate_y, validate_km, 
+            if pb:
+                param = svm_parameter('-t 4 -c %f -b 1 -q' % C)
+                m = svm_train(prob, param)
+                p_label, p_acc, p_val = svm_predict(validate_y, validate_km, 
+                                                m,'-b 1 -q')
+            else:
+                param = svm_parameter('-t 4 -c %f -b 0 -q' % C)
+                m = svm_train(prob, param)
+                p_label, p_acc, p_val = svm_predict(validate_y, validate_km, 
                                                 m,'-b 0 -q')
             acc = p_acc[0]                
             if acc > best_acc:
@@ -145,9 +160,14 @@ def _CV_BestC(x, y, ind, tags, n_folds):
                 best_m = m
             
         # prediction on test set with best C
-        p_label,p_acc,p_val = svm_predict(test_y, test_km, best_m,'-b 0 -q')
-        pred_label[test] = p_label
-    acc = numpy.sum(pred_label == numpy.array(y)) / float(n)
+        if pb:
+            p_label,p_acc,p_val = svm_predict(test_y, test_km, best_m,'-b 1 -q')
+            pred_label[test] = [p[0] for p in p_val]
+            acc = numpy.sum(p_label == numpy.array(y)) / float(n)
+        else:
+            p_label,p_acc,p_val = svm_predict(test_y, test_km, best_m,'-b 0 -q')
+            pred_label[test] = p_label
+            acc = numpy.sum(pred_label == numpy.array(y)) / float(n)
     return pred_label, acc
 
 
