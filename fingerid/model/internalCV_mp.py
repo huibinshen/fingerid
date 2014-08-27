@@ -189,6 +189,7 @@ def _CV_BestC(Queue, kernel, labels, inds, tags, n_folds, pb):
                 if acc > best_acc:
                     best_c = C
                     best_m = m
+                    best_acc = acc
             
             # prediction on test set with best C
             if pb:
