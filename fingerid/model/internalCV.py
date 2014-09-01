@@ -140,7 +140,7 @@ def _CV_BestC(x, y, ind, tags, n_folds, pb):
         # select C on validation set with best acc
         best_acc = 0
         best_c = 2**-5
-        best_m = None
+
         for C in [2**-5,2**-4,2**-3,2**-2,2**-1,2**0,2**1,2**2,2**3,2**4,2**5,
                   2**6,2**7,2**8,2**9,2**10]:
             prob = svm_problem(train_y, train_km, isKernel=True)
@@ -157,15 +157,35 @@ def _CV_BestC(x, y, ind, tags, n_folds, pb):
             acc = p_acc[0]                
             if acc > best_acc:
                 best_c = C
-                best_m = m
+                best_acc = acc
+        # prediction on test set with best C
+        # merge training set and validation set
+
+        train_all = numpy.array(~test)            
+
+        test_km = kernel[numpy.ix_(test, train_all)]
+        train_km = kernel[numpy.ix_(train_all, train_all)]
+        n_train = len(train_km)
+        n_test = len(test_km)
+        train_km = numpy.append(numpy.array(range(1,n_train+1)).reshape(
+                n_train,1), train_km,1).tolist()
+        test_km = numpy.append(numpy.array(range(1,n_test+1)).reshape(
+                n_test,1), test_km,1).tolist()
+        test_y = y[test]
+        train_y = y[train]
+        prob = svm_problem(train_y, train_km, isKernel=True)
             
         # prediction on test set with best C
         if pb:
-            p_label,p_acc,p_val = svm_predict(test_y, test_km, best_m,'-b 1 -q')
+            param = svm_parameter('-t 4 -c %f -b 1 -q' % best_c)
+            m = svm_train(prob, param)
+            p_label,p_acc,p_val = svm_predict(test_y, test_km, m,'-b 1 -q')
             pred_label[test] = [p[0] for p in p_val]
             acc = numpy.sum(p_label == numpy.array(y)) / float(n)
         else:
-            p_label,p_acc,p_val = svm_predict(test_y, test_km, best_m,'-b 0 -q')
+            param = svm_parameter('-t 4 -c %f -b 0 -q' % C)
+            m = svm_train(prob, param)
+            p_label,p_acc,p_val = svm_predict(test_y, test_km, m,'-b 0 -q')
             pred_label[test] = p_label
             acc = numpy.sum(pred_label == numpy.array(y)) / float(n)
     return pred_label, acc
