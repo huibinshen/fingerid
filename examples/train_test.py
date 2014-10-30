@@ -62,7 +62,7 @@ if __name__ == "__main__":
             train_km = kernel.compute_train_kernel(train_ms)
             test_km = kernel.compute_test_kernel(test_ms, train_ms)
             train_km_list.append(train_km)
-            test_km_list.append(test_km)
+            test_km_list.append(centerTestKernel(test_km,train_km))
         else:
             kernel = FragTreeKernel()
             train_km = kernel.compute_train_kernel(train_trees, ty)
@@ -75,14 +75,14 @@ if __name__ == "__main__":
                 train_km = kernel.compute_train_kernel(train_trees, ty)
                 test_km = kernel.compute_test_kernel(test_trees, train_trees, ty)
             train_km_list.append(train_km)
-            test_km_list.append(test_km)
+            test_km_list.append(centerTestKernel(test_km,train_km))
 
     print "combine kernels\n"
     # compute combined train and test kernel
     train_ckm, w = mkl(train_km_list, labels, 'ALIGN')
     test_ckm = numpy.zeros((n_test, n_train))
     for i in range(len(types)):
-        test_ckm = test_ckm + w[i]*centerTestKernel(test_km_list[i])
+        test_ckm = test_ckm + w[i]*test_km_list[i]
     # normalize combined test kernel matrix
     test_ckm = test_ckm / numpy.sum(w)
 

@@ -73,6 +73,9 @@ class Kernel:
         """
         
         numpy.savetxt(write_path, kernel)
+
+
+
         
         
         

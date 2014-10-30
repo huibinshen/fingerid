@@ -38,7 +38,7 @@ class MassBankParser(Parser):
         fnames = []
         for f in files:
             spec = self.parse_file(dir_path + f)
-            fnames.append(spec.fname)
+            fnames.append(spec.f_name)
             spec_list.append(spec)
         return sortbyfilenames(spec_list,fnames)
 
