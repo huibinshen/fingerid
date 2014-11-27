@@ -18,6 +18,8 @@ def predModels(test_km, n_fp, model_dir, prob=False):
 
     model_dir: folder of trained models
 
+    prob, bool, flag to probability output.
+
     Returns:
     -------
     pred_fp: numpy.2d array, n_test * n_fp. Predicted fingerprints matrix

@@ -89,11 +89,15 @@ if __name__ == "__main__":
     # train with 4 processe
     print "train models and make prediction"
     # MODELS is the folder to store trained models.
-    prob= False # Set prob=True if want probability output
+    prob= True # Set prob=True if want probability output
     trainModels(train_ckm, labels, "MODELS", select_c=False, n_p=4, prob=prob)
     #print models
     preds = predModels(test_ckm, n_fp, "MODELS", prob=prob)
-    numpy.savetxt("predictions.txt", preds, fmt="%d")
+    if prob:
+        fmt = "%.4f"
+    else:
+        fmt = "%d"
+    numpy.savetxt("predictions.txt", preds, fmt=fmt)
 
 
 

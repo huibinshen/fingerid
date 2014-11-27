@@ -35,6 +35,7 @@ class TwoDGaussianKernel(Kernel):
         km_peaks = numpy.zeros((n,n))
         km_mloss = numpy.zeros((n,n))
         for i in range(n):
+            print "computing train kernel for %d'th example" % i
             for j in range(i,n):
                 spec_i = cleaned_spectra[i]
                 spec_j = cleaned_spectra[j]
@@ -80,6 +81,7 @@ class TwoDGaussianKernel(Kernel):
         km = numpy.zeros((n_test,n_train))
 
         for i in range(n_test):
+            print "computing kernel for test example %d" % i
             for j in range(n_train):
                 #print "Computing kernel value for (%d, %d)" % (i,j)
                 spec_i = cleaned_test_spectra[i]
