@@ -24,7 +24,7 @@ Dependencies
 
 - Python >= 2.7
 - Numpy >= 1.4.0
-- [LibSVM](http://cvxopt.org/install/index.html) >= 3.17 python interface
+- [LibSVM](http://cvxopt.org/install/index.html) 3.17 python interface
 - [cvxopt](http://cvxopt.org/install/index.html), optional, only needed if using 'ALIGNF' to combine the kernels
 
 Install
@@ -41,7 +41,7 @@ Install
   python setup.py install --user
   ```
 
-- or in your python script (preferred):
+- or in your python script:
 
   ```python
   import sys
