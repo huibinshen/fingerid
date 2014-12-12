@@ -63,17 +63,17 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4, prob=False):
 
     ps = []
     for i in range(n_p):
-        y = labels[:,i]
+        #y = labels[:,i]
         if select_c:
             p = multiprocessing.Process(target=_trainSVMBestC, 
-                                        args=(x, y, model_dir, task_dict[i], tags, prob))
+                                        args=(x, labels, model_dir, task_dict[i], tags, prob))
             p.start()
             ps.append(p)
         else:
             x = numpy.append(numpy.array(
                     range(1,n_x+1)).reshape(n_x,1),x,1).tolist()
             p = multiprocessing.Process(target=_trainSVM, 
-                                        args=(x, y, model_dir, task_dict[i], prob))
+                                        args=(x, labels, model_dir, task_dict[i], prob))
             p.start()
             ps.append(p)
     for p in ps:
@@ -109,11 +109,12 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4, prob=False):
 #            cv_accs.append(cv_acc)
 
 
-def _trainSVM(kernel, label, model_dir, inds, pb):
+def _trainSVM(kernel, labels, model_dir, inds, pb):
     """
     Train the svm with c = 1.
     """
     for ind in inds:
+        label = labels[:,ind]
         #rint "train %d th fingerprint now ..." % (i+1)
         prob = svm_problem(label, kernel, isKernel=True)
         if pb:
@@ -129,11 +130,12 @@ def _trainSVM(kernel, label, model_dir, inds, pb):
         #res.model = m
         #Queue.put(res)
 
-def _trainSVMBestC(k_m, label, model_dir, inds, tags, pb):
+def _trainSVMBestC(k_m, labels, model_dir, inds, tags, pb):
     """
     Train the svm with the best C. C is selected from 5 folds cv.
     """
     for ind in inds:
+        label = labels[:,ind]
         #print "train %dth fingerprint now (select C)..." % (ind+1)
         C = numpy.array([2**-5,2**-4,2**-3,2**-2,2**-1,2**0,2**1,2**2,2**3,
              2**4,2**5,2**6,2**7,2**8,2**9,2**10])
