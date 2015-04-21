@@ -1,0 +1,9 @@
+strict digraph {
+v1 [label="C3H4O2\n71.0149 Da, 26.71 %\nMassDev: 14.7446 ppm, 0.0010 Da\ncE: [5]\nMass Deviation=-1.6577\nTreeSizeScorer=0.5000\nIntensity=2.3999\nFragmentSizeScorer=1.2899\nFree Radical=0.0116\nCommonLossEdgeScorer=-0.7920\nLossSizeScorer=-1.3846\nScore: 0.3670"];
+v2 [label="C4H6O2\n85.0297 Da, 100.00 %\nMassDev: 2.3171 ppm, 0.0002 Da\ncE: [5]\nMass Deviation=-0.2163\nTreeSizeScorer=0.5000\nIntensity=3.1964\nFragmentSizeScorer=1.1497\nFree Radical=0.0116\nCommonLossEdgeScorer=-3.5902\nLossSizeScorer=0.1955\nScore: 1.2466"];
+v3 [label="C6H8O7\n191.0189 Da, 18.46 %\nMassDev: -4.3249 ppm, -0.0008 Da\ncE: [5]\nMass Deviation=-1.1981\nTreeSizeScorer=0.5000\nIntensity=2.1770\nFragmentSizeScorer=0.0898\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0483\nCommonLossEdgeScorer=2.0823\nLossSizeScorer=-0.5799\nScore: 3.1311"];
+v4 [label="C6H10O8\n209.0298 Da, 61.43 %\nMassDev: -2.3481 ppm, -0.0005 Da\ncE: [5]\nMass Deviation=-0.5815\nChemical Prior=0.1751\nScore: -0.4063"];
+v2 -> v1 [label="CH2"];
+v3 -> v2 [label="C2H2O5"];
+v4 -> v3 [label="H2O"];
+}

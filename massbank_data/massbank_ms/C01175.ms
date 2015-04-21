@@ -1,0 +1,40 @@
+>compound 1-O-b-D-glucopyranosyl sinapate_1-O-b-D-glucopyranosyl sinapate
+#instrument UPLC Q-Tof Premier, Waters
+>formula C17H22O10
+#smiles OCC(O1)C(O)C(O)C(O)C(OC(=O)C=Cc(c2)cc(OC)c(O)c(OC)2)1
+#RECORD LC-ESI-QTOF_train_data/PR101004.txt;LC-ESI-QTOF_train_data/PR101056.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 385.11347
+
+>collision 5-60
+71.0151 165.8
+91.0194 190.5
+119.0138 443.4
+147.0079 265.8
+149.0241 205.4
+164.0474 239.9
+175.003 984.1
+190.0263 2058.0
+205.0494 2948.0
+223.0609 642.1
+247.0612 265.8
+385.1135 953.4
+
+>collision 5-60
+69.0267 30.51
+77.0306 37.41
+79.0463 30.29
+91.0425 74.52
+93.059 74.23
+103.0411 27.56
+105.0568 1119.0
+119.0342 83.1
+121.0496 145.8
+129.035 23.28
+147.0306 44.35
+175.0164 87.53
+207.0389 201.4
+225.0459 88.21
+387.1291 52.61
+

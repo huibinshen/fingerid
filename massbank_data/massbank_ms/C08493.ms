@@ -1,0 +1,56 @@
+>compound Indole-3-carboxyaldehyde_Indole-3-carboxyaldehyde
+#instrument UPLC Q-Tof Premier, Waters
+>formula C9H7NO
+#smiles O=Cc(c1)c(c2)c(ccc2)n1
+#RECORD LC-ESI-QTOF_train_data/PR100508.txt;LC-ESI-QTOF_train_data/PR100509.txt;LC-ESI-QTOF_train_data/PR100986.txt;LC-ESI-QTOF_train_data/PR101043.txt;LC-ESI-QTOF_train_data/PR100054.txt;LC-ESI-QTOF_train_data/PR100985.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 144.04496
+
+>collision 5-60
+115.0437 104.1
+116.0507 69.43
+126.0357 68.36
+144.045 2764.0
+144.3465 124.1
+
+>collision 30
+65.9998 9.221
+114.0349 18.51
+115.042 114.7
+116.0507 26.71
+117.0346 6.507
+126.0354 35.91
+142.0314 11.42
+144.045 122.5
+
+>collision 30
+65.9999 32.4
+114.0352 66.0
+115.0424 400.5
+116.0507 90.91
+117.0346 28.94
+126.0344 110.5
+142.0302 34.73
+144.0449 453.0
+
+>collision 5-60
+91.0563 1745.0
+117.0593 618.4
+118.0656 3647.0
+146.0606 1277.0
+
+>collision 5-60
+65.04 84.59
+89.0403 82.38
+90.0485 108.1
+91.0556 1549.0
+117.059 539.6
+118.0652 3040.0
+146.0606 1054.0
+
+>collision 5-60
+115.0453 364.2
+144.0449 6234.0
+144.3449 790.0
+

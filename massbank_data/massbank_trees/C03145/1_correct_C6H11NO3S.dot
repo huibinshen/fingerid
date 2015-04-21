@@ -1,0 +1,9 @@
+strict digraph {
+v1 [label="C4H5NO2\n98.0250 Da, 95.07 %\nMassDev: 2.5305 ppm, 0.0002 Da\ncE: [5]\nMass Deviation=-0.2790\nCommon Fragments:=1.0245\nTreeSizeScorer=0.5000\nIntensity=3.1658\nFragmentSizeScorer=1.0198\nFree Radical=0.0116\nCommonLossEdgeScorer=-1.6565\nLossSizeScorer=0.5256\nScore: 4.3118"];
+v2 [label="C4H7NO\n84.0466 Da, 25.43 %\nMassDev: 13.2380 ppm, 0.0011 Da\ncE: [5]\nMass Deviation=-1.8061\nCommon Fragments:=0.7772\nTreeSizeScorer=0.5000\nIntensity=2.3704\nFragmentSizeScorer=1.1595\nFree Radical=0.0116\nCommonLossEdgeScorer=-2.7296\nLossSizeScorer=0.8860\nScore: 1.1690"];
+v3 [label="C5H7NO3\n128.0352 Da, 100.00 %\nMassDev: -0.9109 ppm, -0.0001 Da\ncE: [5]\nMass Deviation=-0.1232\nTreeSizeScorer=0.5000\nIntensity=3.1964\nFragmentSizeScorer=0.7196\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0483\nCommonLossEdgeScorer=-3.5902\nLossSizeScorer=0.9121\nScore: 1.6747"];
+v4 [label="C6H11NO3S\n176.0382 Da, 122.47 %\nMassDev: -2.7708 ppm, -0.0005 Da\ncE: [5]\nMass Deviation=-0.6124\nChemical Prior=0.1833\nStrangeElementRootScorer=-1.3863\nScore: -1.8153"];
+v3 -> v1 [label="CH2O"];
+v3 -> v2 [label="CO2"];
+v4 -> v3 [label="CH4S"];
+}

@@ -1,0 +1,9 @@
+strict digraph {
+v1 [label="C7H4O2\n121.0293 Da, 8.13 %\nMassDev: 7.3881 ppm, 0.0009 Da\ncE: [5]\nMass Deviation=-1.3330\nCommon Fragments:=1.5344\nTreeSizeScorer=0.5000\nIntensity=1.6822\nFragmentSizeScorer=0.7897\nFree Radical=0.0116\nChemicalPriorEdgeScorer=-0.0072\nCommonLossEdgeScorer=2.0823\nLossSizeScorer=-0.5800\nScore: 4.6800"];
+v2 [label="C6H6O\n95.0503 Da, 8.79 %\nMassDev: 12.1908 ppm, 0.0012 Da\ncE: [5]\nMass Deviation=-1.9139\nCommon Fragments:=1.5344\nTreeSizeScorer=0.5000\nIntensity=1.7295\nFragmentSizeScorer=1.0495\nFree Radical=0.0116\nCommonLossEdgeScorer=-2.7296\nLossSizeScorer=0.8860\nScore: 1.0675"];
+v3 [label="C6H4O\n93.0341 Da, 100.00 %\nMassDev: 6.5438 ppm, 0.0006 Da\ncE: [5]\nMass Deviation=-0.8060\nCommon Fragments:=1.0414\nTreeSizeScorer=0.5000\nIntensity=3.1964\nFragmentSizeScorer=1.0697\nFree Radical=0.0116\nCommonLossEdgeScorer=0.7992\nLossSizeScorer=0.9020\nScore: 6.7143"];
+v4 [label="C7H6O3\n139.0395 Da, 4.49 %\nMassDev: 3.8082 ppm, 0.0005 Da\ncE: [5]\nMass Deviation=-0.6772\nChemical Prior=0.2219\nScore: -0.4552"];
+v4 -> v1 [label="H2O"];
+v4 -> v2 [label="CO2"];
+v4 -> v3 [label="CH2O2"];
+}

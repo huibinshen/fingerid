@@ -1,0 +1,40 @@
+>compound D-Mannose-6-phosphate_D-Mannose-6-phosphate
+#instrument UPLC Q-Tof Premier, Waters
+>formula C6H13O9P
+#smiles O[C@H](O1)[C@@H](O)[C@@H](O)[C@H](O)[C@H]1COP(O)(O)=O
+#RECORD LC-ESI-QTOF_train_data/PR100776.txt;LC-ESI-QTOF_train_data/PR100335.txt;LC-ESI-QTOF_train_data/PR100551.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 259.02192
+
+>collision 5-60
+78.96 1021.0
+96.97 1888.0
+138.9803 124.9
+199.0018 100.9
+259.0219 333.8
+
+>collision 5-60
+69.0333 11.19
+80.971 2.492
+81.0333 7.591
+85.0281 9.637
+97.0267 4.189
+98.9836 45.43
+99.0443 3.476
+99.5096 5.671
+100.512 2.681
+109.028 38.49
+127.0368 19.18
+145.0504 3.378
+207.0027 2.572
+207.0267 2.65
+225.009 8.146
+243.0218 23.52
+261.0375 2.579
+
+>collision 5-60
+78.9602 6077.0
+96.9699 9876.0
+259.0219 1777.0
+

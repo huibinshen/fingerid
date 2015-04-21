@@ -1,0 +1,40 @@
+>compound L-Carnosine_L-Carnosine
+#instrument UPLC Q-Tof Premier, Waters
+>formula C9H14N4O3
+#smiles NCCC(=O)N[C@H](C(O)=O)Cc(c1)ncn1
+#RECORD LC-ESI-QTOF_train_data/PR100072.txt;LC-ESI-QTOF_train_data/PR100391.txt;LC-ESI-QTOF_train_data/PR100518.txt;LC-ESI-QTOF_train_data/PR100073.txt
+>charge 1
+>ionization [M+H]+
+>parentmass 227.11439
+
+>collision 5-60
+156.0782 69.12
+227.1144 966.1
+
+>collision 5-60
+83.0611 321.6
+93.0459 268.8
+95.0616 276.6
+110.0721 2506.0
+122.0726 329.4
+156.0779 804.2
+164.0833 262.9
+181.1098 193.2
+210.0882 520.4
+227.1144 373.2
+
+>collision 5-60
+81.0466 57.35
+93.0458 44.28
+110.0725 397.4
+154.0623 315.1
+163.1012 43.76
+225.0196 70.38
+225.0988 287.3
+
+>collision 30
+110.0739 70.31
+156.0802 120.2
+210.0928 26.29
+227.1144 276.2
+

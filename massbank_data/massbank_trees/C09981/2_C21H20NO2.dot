@@ -1,0 +1,7 @@
+strict digraph {
+v1 [label="C21H16N\n283.1345 Da, 15.84 %\nMassDev: -3.7119 ppm, -0.0011 Da\ncE: [5]\nMass Deviation=-1.0450\nTreeSizeScorer=0.5000\nIntensity=2.0849\nFree Radical=0.0116\nChemicalPriorEdgeScorer=-0.0353\nCommonLossEdgeScorer=2.0823\nLossSizeScorer=-0.5800\nScore: 3.0185"];
+v2 [label="C21H18NO\n301.1449 Da, 11.33 %\nMassDev: -4.0368 ppm, -0.0012 Da\ncE: [5]\nMass Deviation=-1.1671\nTreeSizeScorer=0.5000\nIntensity=1.8826\nFree Radical=0.0116\nChemicalPriorEdgeScorer=-0.0129\nCommonLossEdgeScorer=2.0823\nLossSizeScorer=-0.5801\nScore: 2.7164"];
+v3 [label="C21H20NO2\n319.1545 Da, 9.66 %\nMassDev: -6.8316 ppm, -0.0022 Da\ncE: [5]\nMass Deviation=-2.4458\nIntrinsicallyChargedScorer=-2.3026\nChemical Prior=0.1342\nScore: -4.6142"];
+v2 -> v1 [label="H2O"];
+v3 -> v2 [label="H2O"];
+}

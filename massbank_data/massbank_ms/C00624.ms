@@ -1,0 +1,39 @@
+>compound N-Acetyl-DL-glutamic acid_N-Acetyl-DL-glutamic acid
+#instrument UPLC Q-Tof Premier, Waters
+>formula C7H11NO5
+#smiles CC(=O)NC(CCC(O)=O)C(O)=O
+#RECORD LC-ESI-QTOF_train_data/PR100878.txt;LC-ESI-QTOF_train_data/PR100420.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 188.05592
+
+>collision 5-60
+100.0766 44.88
+102.0561 209.5
+128.0347 208.0
+144.0657 67.64
+146.0462 20.61
+170.0453 66.33
+188.0559 142.0
+
+>collision 5-60
+56.0497 5.507
+70.0105 5.881
+73.0473 4.89
+79.0161 10.78
+81.5159 3.89
+84.0439 288.4
+85.0275 4.34
+90.523 8.304
+99.5093 4.971
+102.0538 67.82
+130.049 317.0
+133.0143 19.38
+133.9332 3.628
+144.0642 14.73
+148.0596 55.82
+149.0448 28.94
+151.0231 12.13
+172.0606 23.83
+190.0715 7.988
+

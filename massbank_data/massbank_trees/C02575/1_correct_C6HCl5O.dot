@@ -1,0 +1,3 @@
+strict digraph {
+v1 [label="C6HCl5O\n262.8392 Da, Infinity %\nMassDev: -2.0035 ppm, -0.0005 Da\ncE: [5]\nMass Deviation=-0.4816\nChemical Prior=-2.8280\nStrangeElementRootScorer=-1.3863\nScore: -4.6958"];
+}

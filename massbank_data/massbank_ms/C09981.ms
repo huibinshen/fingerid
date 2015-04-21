@@ -1,0 +1,31 @@
+>compound Zearalenone_Zearalenone
+#instrument UPLC Q-Tof Premier, Waters
+>formula C18H22O5
+#smiles O=C(C2)CCC[C@H](C)OC(=O)c(c(O)1)c(C=CCC2)cc(O)c1
+#RECORD LC-ESI-QTOF_train_data/PR100441.txt;LC-ESI-QTOF_train_data/PR100893.txt
+>charge 1
+>ionization [M+H]+
+>parentmass 319.15452
+
+>collision 5-60
+69.0717 326.6
+157.0669 371.0
+185.0621 597.1
+187.0773 635.2
+203.0729 419.6
+283.1345 639.9
+301.1449 457.6
+319.1545 390.2
+
+>collision 5-60
+130.0453 691.3
+131.0527 1538.0
+147.0482 432.1
+149.0641 450.7
+160.0201 660.6
+175.0435 1295.0
+187.0442 555.4
+273.1557 763.3
+317.1389 4039.0
+317.585 767.0
+

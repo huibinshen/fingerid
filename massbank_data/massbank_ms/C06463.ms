@@ -1,0 +1,15 @@
+>compound D(-)-Threose_D(-)-Threose
+#instrument UPLC Q-Tof Premier, Waters
+>formula C4H8O4
+#smiles O[C@H](C1)[C@H](O)C(O)O1
+#RECORD LC-ESI-QTOF_train_data/PR100449.txt
+>charge 1
+>ionization [M+H]+
+>parentmass 121.05006
+
+>collision 5-60
+77.0297 30.67
+91.0425 27.71
+93.0575 70.27
+121.0501 19.17
+

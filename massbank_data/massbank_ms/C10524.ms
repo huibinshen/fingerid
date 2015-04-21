@@ -1,0 +1,32 @@
+>compound Puerarin_Puerarin
+#instrument UPLC Q-Tof Premier, Waters
+>formula C21H20O9
+#smiles OC[C@H]([C@@H](O)4)O[C@H]([C@H](O)[C@@H](O)4)c(c(O)3)c(O2)c(cc3)C(=O)C(=C2)c(c1)ccc(O)c1
+#RECORD LC-ESI-QTOF_train_data/PR100251.txt;LC-ESI-QTOF_train_data/PR100673.txt
+>charge 1
+>ionization [M+H]+
+>parentmass 417.11853
+
+>collision 5-60
+239.0742 984.0
+267.0695 1831.0
+268.0779 966.9
+297.0803 2243.0
+307.1005 514.1
+321.081 609.5
+351.0912 536.8
+381.1027 619.3
+399.1123 675.9
+417.1185 2186.0
+
+>collision 5-60
+133.0313 554.2
+222.0722 461.7
+223.0791 510.7
+224.0512 375.8
+253.055 387.9
+267.0684 6868.0
+277.055 1001.0
+295.0638 4471.0
+415.1029 4921.0
+

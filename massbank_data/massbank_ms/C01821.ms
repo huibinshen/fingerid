@@ -1,0 +1,38 @@
+>compound Homoorientin_Homoorientin
+#instrument UPLC Q-Tof Premier, Waters
+>formula C21H20O11
+#smiles OCC(C(O)4)OC(C(O)C(O)4)c(c(O)1)c(O)c(C(=O)3)c(OC(=C3)c(c2)cc(O)c(O)c2)c1
+#RECORD LC-ESI-QTOF_train_data/PR100246.txt;LC-ESI-QTOF_train_data/PR100668.txt
+>charge 1
+>ionization [M+H]+
+>parentmass 449.10836
+
+>collision 5-60
+165.0206 527.2
+299.0578 1805.0
+325.0733 384.1
+329.0685 1177.0
+339.0889 297.0
+353.0686 632.8
+383.0782 348.4
+395.0799 328.9
+413.0903 298.5
+431.1002 351.6
+449.1084 735.5
+
+>collision 5-60
+133.0302 762.7
+163.0047 179.5
+175.0408 160.0
+284.035 315.7
+285.0431 600.7
+297.0429 1008.0
+298.051 759.5
+299.0592 620.9
+311.0582 275.0
+327.053 2487.0
+339.0535 328.0
+357.0641 1954.0
+429.0859 271.4
+447.0928 2363.0
+

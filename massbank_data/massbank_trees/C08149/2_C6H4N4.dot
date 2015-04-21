@@ -1,0 +1,3 @@
+strict digraph {
+v1 [label="C6H4N4\n131.0345 Da, 100.52 %\nMassDev: -13.8870 ppm, -0.0018 Da\ncE: [5, 30]\nMass Deviation=-3.7753\nChemical Prior=-1.9862\nScore: -5.7615"];
+}

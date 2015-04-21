@@ -1,0 +1,33 @@
+>compound Vitexin_Vitexin
+#instrument UPLC Q-Tof Premier, Waters
+>formula C21H20O10
+#smiles OC[C@H]([C@@H](O)4)O[C@H]([C@H](O)[C@@H](O)4)c(c(O)3)c(O1)c(c(O)c3)C(=O)C=C(c(c2)ccc(O)c2)1
+#RECORD LC-ESI-QTOF_train_data/PR100820.txt;LC-ESI-QTOF_train_data/PR100370.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 431.09784
+
+>collision 5-60
+117.0356 777.5
+283.0634 2672.0
+311.0576 4115.0
+341.0706 415.8
+431.0978 2775.0
+
+>collision 5-60
+121.0309 406.1
+255.0691 266.1
+256.0766 224.9
+283.0638 1290.0
+284.0718 790.3
+295.0643 303.0
+297.0795 401.7
+313.0744 1614.0
+323.0946 368.2
+337.0747 361.5
+367.0856 300.7
+379.0859 225.4
+397.0957 589.2
+415.1061 632.0
+433.1134 1861.0
+

@@ -1,0 +1,30 @@
+>compound Esculin_Esculin
+#instrument UPLC Q-Tof Premier, Waters
+>formula C15H16O9
+#smiles OCC(O1)C(O)C(O)C(O)C1Oc(c2)c(O)cc(O3)c(C=CC(=O)3)2
+#RECORD LC-ESI-QTOF_train_data/PR100940.txt;LC-ESI-QTOF_train_data/PR100475.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 339.07163
+
+>collision 5-60
+89.0409 451.4
+105.0354 733.3
+133.0304 1313.0
+177.0192 8485.0
+177.3528 345.5
+339.0716 1747.0
+
+>collision 5-60
+77.0405 97.1
+85.03 58.8
+89.0403 31.23
+105.0351 86.65
+123.0458 546.8
+133.0304 427.6
+135.0456 57.89
+151.0405 114.7
+179.0348 2684.0
+180.0395 32.36
+341.0872 215.8
+

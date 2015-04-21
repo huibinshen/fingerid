@@ -1,0 +1,5 @@
+strict digraph {
+v1 [label="C4H8O2\n87.0455 Da, 198.95 %\nMassDev: 3.9859 ppm, 0.0003 Da\ncE: [5, 30]\nMass Deviation=-0.4087\nTreeSizeScorer=0.5000\nIntensity=3.6113\nFragmentSizeScorer=1.1295\nFree Radical=0.0116\nCommonLossEdgeScorer=-2.7296\nLossSizeScorer=0.8860\nScore: 3.0002"];
+v2 [label="C5H8O4\n131.0345 Da, 100.52 %\nMassDev: -3.6806 ppm, -0.0005 Da\ncE: [5, 30]\nMass Deviation=-0.6040\nChemical Prior=0.1979\nScore: -0.4061"];
+v2 -> v1 [label="CO2"];
+}

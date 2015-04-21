@@ -1,0 +1,36 @@
+>compound N-Acetyl-DL-aspartic acid_N-Acetyl-DL-aspartic acid
+#instrument UPLC Q-Tof Premier, Waters
+>formula C6H9NO5
+#smiles CC(=O)NC(CC(O)=O)C(O)=O
+#RECORD LC-ESI-QTOF_train_data/PR100395.txt;LC-ESI-QTOF_train_data/PR100851.txt
+>charge 1
+>ionization [M+H]+
+>parentmass 176.05587
+
+>collision 5-60
+70.0284 12.76
+71.0099 1.524
+74.0233 99.72
+75.0258 1.574
+88.0383 139.4
+89.0506 1.49
+90.5054 1.977
+98.0214 3.314
+99.0084 8.527
+99.511 2.743
+116.0337 50.87
+130.0476 22.17
+134.0437 138.4
+135.0557 1.578
+158.0445 22.47
+176.0559 6.663
+
+>collision 5-60
+58.031 10.74
+88.0404 157.4
+114.0202 27.12
+115.0037 19.86
+130.0506 37.17
+156.0298 12.09
+174.0403 81.14
+

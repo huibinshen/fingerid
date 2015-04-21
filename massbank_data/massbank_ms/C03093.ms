@@ -1,0 +1,40 @@
+>compound Daphnetin_Daphnetin
+#instrument UPLC Q-Tof Premier, Waters
+>formula C9H6O4
+#smiles O=C(C=2)Oc(c(O)1)c(C2)ccc(O)1
+#RECORD LC-ESI-QTOF_train_data/PR100937.txt;LC-ESI-QTOF_train_data/PR100473.txt;LC-ESI-QTOF_train_data/PR100936.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 177.01881
+
+>collision 30
+65.0409 19.86
+67.0195 31.72
+75.0245 12.5
+77.0402 30.29
+79.0195 19.03
+92.0261 17.62
+93.0344 163.9
+105.0338 30.73
+121.0286 247.5
+132.0205 42.28
+149.0239 35.16
+177.0188 17.91
+
+>collision 5-60
+77.0404 209.8
+89.0406 53.67
+105.0353 142.7
+123.0452 157.1
+133.03 406.9
+135.0449 68.33
+179.0344 854.4
+
+>collision 5-60
+93.0357 274.4
+105.0356 278.7
+121.0301 522.0
+133.0304 262.5
+149.0251 275.9
+177.0188 2589.0
+

@@ -1,0 +1,40 @@
+>compound Poncirin_Poncirin
+#instrument UPLC Q-Tof Premier, Waters
+>formula C28H34O14
+#smiles c(O)(c3)c(C(=O)2)c(cc3O[C@H](O5)[C@@H]([C@@H](O)[C@H](O)[C@@H](CO)5)O[C@H](O4)[C@H](O)[C@H](O)[C@@H](O)[C@H](C)4)O[C@@H](C2)c(c1)ccc(OC)c1
+#RECORD LC-ESI-QTOF_train_data/PR100812.txt;LC-ESI-QTOF_train_data/PR100811.txt;LC-ESI-QTOF_train_data/PR100363.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 593.18705
+
+>collision 30
+285.0773 7272.0
+327.0885 404.1
+593.1871 342.1
+
+>collision 5-60
+151.0048 341.4
+164.0128 429.9
+270.056 307.4
+285.0782 3290.0
+593.1871 2874.0
+
+>collision 5-60
+71.051 80.75
+85.0292 157.8
+129.0565 78.43
+135.0823 35.43
+153.0197 610.9
+161.062 157.8
+195.03 82.01
+219.0305 35.83
+263.0555 34.14
+287.0923 1004.0
+329.1025 49.58
+397.1268 36.04
+415.1381 33.33
+431.1361 31.56
+433.1499 73.17
+449.1442 79.13
+595.2026 33.73
+

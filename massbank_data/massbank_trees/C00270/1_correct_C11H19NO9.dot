@@ -1,0 +1,9 @@
+strict digraph {
+v1 [label="C5H9NO\n98.0612 Da, 17.78 %\nMassDev: 0.6378 ppm, 0.0001 Da\ncE: [5]\nMass Deviation=-0.0643\nCommon Fragments:=0.5492\nTreeSizeScorer=0.5000\nIntensity=2.1546\nFragmentSizeScorer=1.0194\nFree Radical=0.0116\nCommonLossEdgeScorer=-2.7575\nLossSizeScorer=0.7602\nScore: 2.1732"];
+v2 [label="C3H4O3\n87.0093 Da, 100.00 %\nMassDev: 6.1196 ppm, 0.0005 Da\ncE: [5]\nMass Deviation=-0.6819\nTreeSizeScorer=0.5000\nIntensity=3.1964\nFragmentSizeScorer=1.1299\nFree Radical=0.0116\nCommonLossEdgeScorer=-3.5902\nLossSizeScorer=0.5994\nScore: 1.1653"];
+v3 [label="C7H9NO4\n170.0458 Da, 16.59 %\nMassDev: -0.4782 ppm, -0.0001 Da\ncE: [5]\nMass Deviation=-0.0844\nTreeSizeScorer=0.5000\nIntensity=2.1127\nFragmentSizeScorer=0.2995\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0483\nCommonLossEdgeScorer=-3.5902\nLossSizeScorer=-0.4260\nScore: -1.1284"];
+v4 [label="C11H19NO9\n308.0982 Da, 14.05 %\nMassDev: -1.6382 ppm, -0.0005 Da\ncE: [5]\nMass Deviation=-0.3811\nChemical Prior=0.1858\nScore: -0.1953"];
+v3 -> v1 [label="C2O3"];
+v3 -> v2 [label="C4H5NO"];
+v4 -> v3 [label="C4H10O5"];
+}

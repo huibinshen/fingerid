@@ -1,0 +1,7 @@
+strict digraph {
+v1 [label="HO2S\n63.9627 Da, 100.00 %\nMassDev: 3.9270 ppm, 0.0003 Da\ncE: [5]\nMass Deviation=-0.2830\nStrangeElementSmallFragmentScorer=0.4055\nTreeSizeScorer=0.5000\nIntensity=3.1964\nFragmentSizeScorer=1.3604\nFree Radical=-0.0937\nCommonLossEdgeScorer=16.6307\nLossSizeScorer=-20.2063\nScore: 1.5100"];
+v2 [label="H2O2S\n64.9719 Da, 26.17 %\nMassDev: 25.0285 ppm, 0.0016 Da\ncE: [5]\nMass Deviation=-3.1681\nStrangeElementSmallFragmentScorer=0.4055\nTreeSizeScorer=0.5000\nIntensity=2.3876\nFragmentSizeScorer=1.3503\nFree Radical=0.0116\nCommonLossEdgeScorer=-0.3661\nLossSizeScorer=0.8762\nScore: 1.9970"];
+v3 [label="C2H7NO2S\n108.0119 Da, 50.17 %\nMassDev: -5.3051 ppm, -0.0006 Da\ncE: [5]\nMass Deviation=-0.7469\nChemical Prior=-3.7156\nStrangeElementRootScorer=-1.3863\nScore: -5.8488"];
+v2 -> v1 [label="H"];
+v3 -> v2 [label="C2H5N"];
+}

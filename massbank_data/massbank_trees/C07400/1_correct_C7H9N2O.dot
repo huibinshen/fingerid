@@ -1,0 +1,17 @@
+strict digraph {
+v1 [label="C7H7N2\n119.0627 Da, 114.21 %\nMassDev: 19.5305 ppm, 0.0023 Da\ncE: [30]\nMass Deviation=-5.6123\nTreeSizeScorer=0.5000\nIntensity=3.2765\nFragmentSizeScorer=0.8094\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0088\nCommonLossEdgeScorer=2.0823\nLossSizeScorer=-0.5802\nScore: 0.4960"];
+v2 [label="C5H4N\n78.0336 Da, 4.66 %\nMassDev: -2.8904 ppm, -0.0002 Da\ncE: [30]\nMass Deviation=-0.2510\nTreeSizeScorer=0.5000\nIntensity=1.3460\nFragmentSizeScorer=1.2197\nFree Radical=-0.0937\nCommonLossEdgeScorer=1.3731\nLossSizeScorer=-1.1439\nScore: 2.9501"];
+v3 [label="C4H5N\n67.0419 Da, 1.89 %\nMassDev: 3.7204 ppm, 0.0002 Da\ncE: [30]\nMass Deviation=-0.2808\nCommon Fragments:=0.1372\nTreeSizeScorer=0.5000\nIntensity=0.8032\nFragmentSizeScorer=1.3296\nFree Radical=0.0116\nCommonLossEdgeScorer=0.4429\nLossSizeScorer=0.2884\nScore: 3.2321"];
+v4 [label="C5H6\n66.0465 Da, 4.68 %\nMassDev: 1.4897 ppm, 0.0001 Da\ncE: [30]\nMass Deviation=-0.1030\nTreeSizeScorer=0.5000\nIntensity=1.3491\nFragmentSizeScorer=1.3395\nFree Radical=0.0116\nCommonLossEdgeScorer=-0.6117\nLossSizeScorer=0.3562\nScore: 2.8417"];
+v5 [label="C6H7N\n93.0595 Da, 117.19 %\nMassDev: 23.6339 ppm, 0.0022 Da\ncE: [30]\nMass Deviation=-5.1203\nCommon Fragments:=1.5344\nTreeSizeScorer=0.5000\nIntensity=3.2920\nFragmentSizeScorer=1.0694\nFree Radical=-0.0937\nCommonLossEdgeScorer=-2.5715\nLossSizeScorer=-0.7501\nScore: -2.1397"];
+v6 [label="C5H5\n65.0385 Da, 3.20 %\nMassDev: -1.1775 ppm, -0.0001 Da\ncE: [30]\nMass Deviation=-0.0793\nCommon Fragments:=1.0414\nTreeSizeScorer=0.5000\nIntensity=1.1191\nFragmentSizeScorer=1.3496\nFree Radical=0.0116\nCommonLossEdgeScorer=-0.1031\nLossSizeScorer=0.8950\nScore: 4.7343"];
+v7 [label="C6H8NO\n110.0587 Da, 2.08 %\nMassDev: -12.1780 ppm, -0.0013 Da\ncE: [30]\nMass Deviation=-2.3659\nTreeSizeScorer=0.5000\nIntensity=0.8611\nFragmentSizeScorer=0.8994\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0483\nCommonLossEdgeScorer=-0.6117\nLossSizeScorer=0.3561\nScore: -0.3010"];
+v8 [label="C7H9N2O\n137.0715 Da, 92.76 %\nMassDev: 4.0904 ppm, 0.0006 Da\ncE: [30]\nMass Deviation=-0.7269\nIntrinsicallyChargedScorer=-2.3026\nChemical Prior=0.2293\nScore: -2.8002"];
+v8 -> v1 [label="H2O"];
+v5 -> v2 [label="CH3"];
+v5 -> v3 [label="C2H2"];
+v5 -> v4 [label="CHN"];
+v7 -> v5 [label="HO"];
+v7 -> v6 [label="CH3NO"];
+v8 -> v7 [label="CHN"];
+}

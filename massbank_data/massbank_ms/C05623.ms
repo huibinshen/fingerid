@@ -1,0 +1,38 @@
+>compound quercetin-3-O-beta-glucopyranoside_quercetin-3-O-beta-glucopyranoside
+#instrument UPLC Q-Tof Premier, Waters
+>formula C21H20O12
+#smiles OCC(O1)C(O)C(O)C(O)C1OC(C(=O)3)=C(Oc(c4)c(c(O)cc(O)4)3)c(c2)cc(O)c(O)c2
+#RECORD LC-ESI-QTOF_train_data/PR100254.txt;LC-ESI-QTOF_train_data/PR100677.txt
+>charge 1
+>ionization [M+H]+
+>parentmass 465.10327
+
+>collision 5-60
+69.0349 33.72
+81.0344 25.99
+85.029 149.7
+97.0299 53.08
+109.0299 34.72
+111.0091 22.87
+127.0411 43.26
+137.0242 76.86
+145.0529 38.02
+153.019 105.2
+165.0192 62.33
+201.0566 44.21
+229.0503 104.5
+257.0444 67.59
+285.0385 27.19
+303.0491 2165.0
+304.0519 33.98
+465.1033 30.61
+
+>collision 5-60
+151.005 487.7
+243.0328 765.1
+255.0325 1416.0
+271.0276 3023.0
+300.0299 4141.0
+301.0388 2154.0
+463.0877 3289.0
+

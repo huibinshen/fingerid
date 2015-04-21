@@ -1,0 +1,33 @@
+>compound But-3-enylglucosinolate_But-3-enylglucosinolate
+#instrument UPLC Q-Tof Premier, Waters
+>formula C11H19NO9S2
+#smiles C=CCCC(=NOS(O)(=O)=O)SC(O1)C(O)C(O)C(O)C(CO)1
+#RECORD LC-ESI-QTOF_train_data/PR100426.txt;LC-ESI-QTOF_train_data/PR100883.txt
+>charge 1
+>ionization [M+K]+
+>parentmass 412.0138
+
+>collision 5-60
+98.9568 15.56
+99.4915 3.487
+105.0457 1.933
+121.0397 3.976
+122.9314 1.733
+158.9632 7.325
+314.8909 6.97
+331.9902 12.97
+411.006 7.889
+411.0872 18.65
+411.9225 7.041
+412.0154 8.75
+412.0853 6.037
+
+>collision 5-60
+63.9637 3.586
+79.9599 2.746
+95.9541 3.059
+96.9628 2.031
+134.9161 7.149
+247.945 15.94
+409.9982 1.852
+

@@ -1,0 +1,7 @@
+strict digraph {
+v1 [label="HO3P\n78.9604 Da, 100.00 %\nMassDev: 17.0456 ppm, 0.0013 Da\ncE: [5]\nMass Deviation=-2.3807\nStrangeElementSmallFragmentScorer=0.4055\nTreeSizeScorer=0.5000\nIntensity=3.1964\nFragmentSizeScorer=1.2104\nFree Radical=0.0116\nCommonLossEdgeScorer=2.0823\nLossSizeScorer=-0.5800\nScore: 4.4454"];
+v2 [label="H3O4P\n96.9705 Da, 65.36 %\nMassDev: 9.0878 ppm, 0.0009 Da\ncE: [5]\nMass Deviation=-1.3069\nStrangeElementSmallFragmentScorer=0.4055\nTreeSizeScorer=0.5000\nIntensity=2.9398\nFragmentSizeScorer=1.0303\nFree Radical=0.0116\nCommonLossEdgeScorer=-3.5902\nLossSizeScorer=-2.0970\nScore: -2.1069"];
+v3 [label="C9H13N2O9P\n323.0281 Da, 52.45 %\nMassDev: -1.5174 ppm, -0.0005 Da\ncE: [5]\nMass Deviation=-0.3491\nChemical Prior=0.2201\nStrangeElementRootScorer=-1.3863\nScore: -1.5153"];
+v2 -> v1 [label="H2O"];
+v3 -> v2 [label="C9H10N2O5"];
+}

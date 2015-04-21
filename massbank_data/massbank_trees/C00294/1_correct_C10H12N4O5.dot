@@ -1,0 +1,15 @@
+strict digraph {
+v1 [label="C6H3O2\n108.0207 Da, 16.00 %\nMassDev: 1.1036 ppm, 0.0001 Da\ncE: [5]\nMass Deviation=-0.1261\nTreeSizeScorer=0.5000\nIntensity=2.0907\nFragmentSizeScorer=0.9198\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0483\nCommonLossEdgeScorer=-0.6117\nLossSizeScorer=0.3560\nScore: 3.1886"];
+v2 [label="C7H4NO2\n135.0310 Da, 100.00 %\nMassDev: -3.5534 ppm, -0.0005 Da\ncE: [5]\nMass Deviation=-0.6003\nTreeSizeScorer=0.5000\nIntensity=3.1964\nFragmentSizeScorer=0.6497\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0045\nCommonLossEdgeScorer=10.0085\nLossSizeScorer=-13.4176\nScore: 0.3528"];
+v3 [label="C7H4NO\n119.0363 Da, 1.70 %\nMassDev: -2.2279 ppm, -0.0003 Da\ncE: [30]\nMass Deviation=-0.3007\nTreeSizeScorer=0.5000\nIntensity=0.7396\nFragmentSizeScorer=0.8096\nFree Radical=0.0116\nChemicalPriorEdgeScorer=-0.0286\nCommonLossEdgeScorer=2.0823\nLossSizeScorer=-0.5799\nScore: 3.2339"];
+v4 [label="C6H3O\n92.0259 Da, 11.30 %\nMassDev: 2.5409 ppm, 0.0002 Da\ncE: [5]\nMass Deviation=-0.2613\nTreeSizeScorer=0.5000\nIntensity=1.8811\nFragmentSizeScorer=1.0797\nFree Radical=0.0116\nCommonLossEdgeScorer=2.0823\nLossSizeScorer=-0.5801\nScore: 4.7135"];
+v5 [label="C6H5O2\n110.0359 Da, 3.08 %\nMassDev: -3.0068 ppm, -0.0003 Da\ncE: [5, 30]\nMass Deviation=-0.3869\nTreeSizeScorer=0.5000\nIntensity=1.0959\nFragmentSizeScorer=0.8996\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0483\nCommonLossEdgeScorer=-0.6117\nLossSizeScorer=0.3561\nScore: 1.9131"];
+v6 [label="C7H6NO2\n137.0473 Da, 29.16 %\nMassDev: 1.2413 ppm, 0.0002 Da\ncE: [5, 30]\nMass Deviation=-0.1844\nTreeSizeScorer=0.5000\nIntensity=2.4529\nFragmentSizeScorer=0.6295\nFree Radical=-2.2910\nChemicalPriorEdgeScorer=0.0268\nCommonLossEdgeScorer=-3.5902\nLossSizeScorer=-0.3079\nScore: -2.7643"];
+v7 [label="C10H12N4O5\n269.0886 Da, 0.00 %\nMassDev: 1.9476 ppm, 0.0005 Da\ncE: []\nChemical Prior=0.2295\nScore: 0.2295"];
+v2 -> v1 [label="CHN"];
+v6 -> v2 [label="H2"];
+v6 -> v3 [label="H2O"];
+v5 -> v4 [label="H2O"];
+v6 -> v5 [label="CHN"];
+v7 -> v6 [label="C3H6N3O3"];
+}

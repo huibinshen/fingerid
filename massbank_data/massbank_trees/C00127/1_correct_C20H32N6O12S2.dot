@@ -1,0 +1,15 @@
+strict digraph {
+v1 [label="C20H30N6O12S2\n611.1442 Da, 100.00 %\nMassDev: 1.0000 ppm, 0.0006 Da\ncE: [5]\nMass Deviation=-0.2203\nTreeSizeScorer=0.5000\nIntensity=3.1964\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0483\nCommonLossEdgeScorer=10.0085\nLossSizeScorer=-13.4206\nScore: 0.1238"];
+v2 [label="C12H9N4\n210.0891 Da, 11.70 %\nMassDev: -4.2731 ppm, -0.0009 Da\ncE: [5]\nMass Deviation=-1.2620\nTreeSizeScorer=0.5000\nIntensity=1.9022\nFree Radical=0.0116\nChemicalPriorEdgeScorer=-0.0331\nCommonLossEdgeScorer=-1.7918\nLossSizeScorer=0.8685\nScore: 0.1953"];
+v3 [label="C13H9N4O2\n254.0793 Da, 17.00 %\nMassDev: -2.0741 ppm, -0.0005 Da\ncE: [5]\nMass Deviation=-0.5064\nTreeSizeScorer=0.5000\nIntensity=2.1273\nFree Radical=0.0116\nChemicalPriorEdgeScorer=-0.0122\nCommonLossEdgeScorer=2.0823\nLossSizeScorer=-0.5799\nScore: 3.6227"];
+v4 [label="C13H11N4O3\n272.0905 Da, 31.19 %\nMassDev: 0.3982 ppm, 0.0001 Da\ncE: [5]\nMass Deviation=-0.0829\nTreeSizeScorer=0.5000\nIntensity=2.4935\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0025\nCommonLossEdgeScorer=-3.5902\nLossSizeScorer=0.6868\nScore: 0.0214"];
+v5 [label="C13H11N4O2S\n288.0674 Da, 5.82 %\nMassDev: -0.5139 ppm, -0.0001 Da\ncE: [5]\nMass Deviation=-0.1082\nTreeSizeScorer=0.5000\nIntensity=1.4803\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0150\nCommonLossEdgeScorer=2.0823\nLossSizeScorer=-0.5799\nScore: 3.4011"];
+v6 [label="C13H13N4O3S\n306.0781 Da, 72.84 %\nMassDev: -0.0416 ppm, -0.0000 Da\ncE: [5]\nMass Deviation=-0.0084\nTreeSizeScorer=0.5000\nIntensity=3.0052\nFree Radical=0.0116\nLoss RDBE=-1.0986\nChemicalPriorEdgeScorer=0.0321\nCommonLossEdgeScorer=-3.5902\nLossSizeScorer=-3.4703\nScore: -4.6186"];
+v7 [label="C20H32N6O12S2\n613.1598 Da, 17.90 %\nMassDev: 0.9151 ppm, 0.0006 Da\ncE: [5, 30]\nMass Deviation=-0.2000\nChemical Prior=0.2228\nStrangeElementRootScorer=-1.3863\nScore: -1.3634"];
+v7 -> v1 [label="H2"];
+v4 -> v2 [label="CH2O3"];
+v4 -> v3 [label="H2O"];
+v6 -> v4 [label="H2S"];
+v6 -> v5 [label="H2O"];
+v7 -> v6 [label="C7H19N2O9S"];
+}

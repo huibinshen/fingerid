@@ -1,0 +1,27 @@
+>compound UDP-xylose_UDP-xylose
+#instrument UPLC Q-Tof Premier, Waters
+>formula C14H22N2O16P2
+#smiles O=C(C=3)NC(=O)N(C3)C(O1)C(O)C(O)C(COP(O)(=O)OP(O)(=O)OC(O2)C(O)C(O)C(O)C2)1
+#RECORD LC-ESI-QTOF_train_data/PR100711.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 535.03666
+
+>collision 5-60
+78.9604 1510.0
+96.9706 966.7
+111.0208 256.7
+138.9814 110.7
+150.981 108.7
+158.9264 467.7
+174.9811 45.94
+192.9918 66.92
+211.0032 409.5
+272.9583 194.4
+280.025 115.2
+290.9695 122.7
+305.0214 60.39
+323.0301 2084.0
+384.9874 189.2
+535.0367 1657.0
+

@@ -1,0 +1,3 @@
+strict digraph {
+v1 [label="C15H22N6O5S\n399.1450 Da, 232.08 %\nMassDev: 1.2145 ppm, 0.0005 Da\ncE: [5]\nMass Deviation=-0.2733\nChemical Prior=-0.4067\nStrangeElementRootScorer=-1.3863\nScore: -2.0664"];
+}

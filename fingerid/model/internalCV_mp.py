@@ -18,8 +18,7 @@ class result():
         self.fp_ind = i # fingerprint index 
         self.pred_fp_ = numpy.zeros(n) # predicted fingerprints
         self.acc = 0 # cross validation accuracy
-    
-def internalCV_mp(kernel, labels, n_folds, select_c=False, n_p=8, prob=False):
+def internalCV_mp(kernel, labels, n_folds, select_c=False, n_p=8, prob=False):    
     """
     Internel cross validation using train data.
 
@@ -59,7 +58,7 @@ def internalCV_mp(kernel, labels, n_folds, select_c=False, n_p=8, prob=False):
     #cv_accs = numpy.zeros(n_y)
     pred_fp = numpy.zeros((n_x, n_y))
 
-    tags = _label_folds(n_x, n_folds)
+    #tags = _label_folds(n_x, n_folds)
     result_queue = multiprocessing.Queue(n_y)
 
     task_dict = {}
@@ -94,7 +93,7 @@ def _CV(Queue, x, labels, inds, tags, n_folds, pb):
     Internel cross validation using c = 1
     """
     for ind in inds:
-        #print "cv on %d'th fingerprint" % ind
+        print "cv on %d'th fingerprint" % ind
         n = len(x)
         pred = numpy.zeros(n)
         y = labels[:,ind]
@@ -139,7 +138,7 @@ def _CV_BestC(Queue, kernel, labels, inds, tags, n_folds, pb):
     Internel cross validation using best C
     """
     for ind in inds:
-        #print "cv on %d'th fingerprint" % ind
+        print "cv on %d'th fingerprint" % ind
         n = len(kernel)
         y = labels[:,ind]
         pred_label = numpy.zeros(n)
@@ -172,7 +171,7 @@ def _CV_BestC(Queue, kernel, labels, inds, tags, n_folds, pb):
 
             # select C on validation set with best acc
             best_acc = 0
-            best_c = 1
+            best_c = 2**-5
 
             for C in [2**-5,2**-4,2**-3,2**-2,2**-1,2**0,2**1,2**2,2**3,2**4,
                       2**5, 2**6,2**7,2**8,2**9,2**10]:
@@ -197,16 +196,19 @@ def _CV_BestC(Queue, kernel, labels, inds, tags, n_folds, pb):
             test_km = kernel[numpy.ix_(test, train_all)]
             train_km = kernel[numpy.ix_(train_all, train_all)]
 
+            test_y = y[test]
+            train_y = y[train_all]
+
             n_train = len(train_km)
             n_test = len(test_km)
+
 
             train_km = numpy.append(numpy.array(range(1,n_train+1)).reshape(
                     n_train,1), train_km,1).tolist()
             test_km = numpy.append(numpy.array(range(1,n_test+1)).reshape(
                     n_test,1), test_km,1).tolist()
 
-            test_y = y[test]
-            train_y = y[train]
+
             prob = svm_problem(train_y, train_km, isKernel=True)
             if pb:
                 param = svm_parameter('-t 4 -c %f -b 1 -q' % best_c)

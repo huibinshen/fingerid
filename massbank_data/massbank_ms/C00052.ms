@@ -1,0 +1,25 @@
+>compound UDP-Galactose_UDP-Galactose
+#instrument UPLC Q-Tof Premier, Waters
+>formula C15H24N2O17P2
+#smiles OCC(O1)C(O)C(O)C(O)C1OP(O)(=O)OP(O)(=O)OCC(O2)C(O)C(O)C2N(C=3)C(=O)NC(=O)C3
+#RECORD LC-ESI-QTOF_train_data/PR100758.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 565.04722
+
+>collision 5-60
+78.9604 1896.0
+96.9706 1137.0
+111.0208 346.8
+138.9812 140.3
+150.981 140.3
+158.9264 776.9
+211.0025 275.3
+241.0131 157.2
+272.9595 346.6
+320.9801 192.6
+323.0303 2372.0
+384.9868 350.4
+402.9992 153.8
+565.0472 2626.0
+

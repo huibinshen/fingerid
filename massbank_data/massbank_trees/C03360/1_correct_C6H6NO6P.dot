@@ -1,0 +1,5 @@
+strict digraph {
+v1 [label="HO3P\n78.9590 Da, 161.15 %\nMassDev: -0.6848 ppm, -0.0001 Da\ncE: [5]\nMass Deviation=-0.0554\nStrangeElementSmallFragmentScorer=0.4055\nTreeSizeScorer=0.5000\nIntensity=3.4842\nFragmentSizeScorer=1.2104\nFree Radical=0.0116\nCommonLossEdgeScorer=-3.5902\nLossSizeScorer=-0.4451\nScore: 1.5210"];
+v2 [label="C6H6NO6P\n217.9855 Da, 3.87 %\nMassDev: -2.2804 ppm, -0.0005 Da\ncE: [5]\nMass Deviation=-0.5614\nChemical Prior=0.2315\nStrangeElementRootScorer=-1.3863\nScore: -1.7162"];
+v2 -> v1 [label="C6H5NO3"];
+}

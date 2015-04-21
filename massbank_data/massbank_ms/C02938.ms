@@ -1,0 +1,36 @@
+>compound 3-Indolylacetonitrile_3-Indolylacetonitrile
+#instrument UPLC Q-Tof Premier, Waters
+>formula C10H8N2
+#smiles N#CCc(c1)c(c2)c(ccc2)n1
+#RECORD LC-ESI-QTOF_train_data/PR100050.txt;LC-ESI-QTOF_train_data/PR100049.txt
+>charge 1
+>ionization [M]+
+>parentmass 156.06874
+
+>collision 30
+74.9399 3.995
+77.039 2.908
+78.0451 2.361
+89.041 7.39
+90.0473 15.47
+102.0443 2.074
+103.0527 2.604
+117.0592 22.11
+128.048 2.049
+129.0557 3.643
+130.0682 5.404
+155.0666 2.911
+156.0687 4.977
+
+>collision 5-60
+74.9419 19.62
+90.0486 6.859
+99.5129 6.521
+115.9686 35.39
+117.0606 57.43
+130.0683 86.9
+131.0708 5.84
+155.0655 9.939
+156.0687 38.67
+157.078 22.27
+

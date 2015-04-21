@@ -1,0 +1,9 @@
+strict digraph {
+v1 [label="C8H15O\n126.1046 Da, 30.96 %\nMassDev: -3.2802 ppm, -0.0004 Da\ncE: [5]\nMass Deviation=-0.5023\nTreeSizeScorer=0.5000\nIntensity=2.4891\nFragmentSizeScorer=0.7390\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0252\nCommonLossEdgeScorer=-2.7296\nLossSizeScorer=0.8860\nScore: 1.4189"];
+v2 [label="C9H15O3\n170.0946 Da, 42.21 %\nMassDev: -1.4280 ppm, -0.0002 Da\ncE: [5]\nMass Deviation=-0.2726\nTreeSizeScorer=0.5000\nIntensity=2.6760\nFragmentSizeScorer=0.2991\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0225\nCommonLossEdgeScorer=-0.1605\nLossSizeScorer=0.9143\nScore: 3.9904"];
+v3 [label="C12H17O4\n224.1054 Da, 9.41 %\nMassDev: -0.0338 ppm, -0.0000 Da\ncE: [5]\nMass Deviation=-0.0067\nTreeSizeScorer=0.5000\nIntensity=1.7708\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0483\nCommonLossEdgeScorer=-3.5902\nLossSizeScorer=-1.1477\nScore: -2.4139"];
+v4 [label="C12H18NO4\n239.1144 Da, 29.67 %\nMassDev: -7.9736 ppm, -0.0019 Da\ncE: [5]\nMass Deviation=-3.0546\nIntrinsicallyChargedScorer=-2.3026\nChemical Prior=0.2254\nScore: -5.1318"];
+v2 -> v1 [label="CO2"];
+v3 -> v2 [label="C3H2O"];
+v4 -> v3 [label="HN"];
+}

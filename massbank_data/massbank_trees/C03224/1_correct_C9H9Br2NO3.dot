@@ -1,0 +1,17 @@
+strict digraph {
+v1 [label="C8H6Br2O\n274.8714 Da, 18.89 %\nMassDev: 0.5000 ppm, 0.0001 Da\ncE: [5]\nMass Deviation=-0.1044\nTreeSizeScorer=0.5000\nIntensity=2.1910\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0483\nCommonLossEdgeScorer=0.9361\nLossSizeScorer=-0.7451\nScore: 2.8377"];
+v2 [label="HBr\n78.9200 Da, 100.00 %\nMassDev: 14.1196 ppm, 0.0011 Da\ncE: [5]\nMass Deviation=-1.8100\nStrangeElementSmallFragmentScorer=0.4055\nTreeSizeScorer=0.5000\nIntensity=3.1964\nFragmentSizeScorer=1.2108\nFree Radical=-0.0937\nCommonLossEdgeScorer=-3.5902\nLossSizeScorer=0.4316\nScore: 0.2502"];
+v3 [label="C6H6BrO\n171.9534 Da, 16.99 %\nMassDev: 2.7597 ppm, 0.0005 Da\ncE: [5]\nMass Deviation=-0.5923\nTreeSizeScorer=0.5000\nIntensity=2.1270\nFragmentSizeScorer=0.2805\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0432\nCommonLossEdgeScorer=-3.2886\nLossSizeScorer=0.8501\nScore: -0.0685"];
+v4 [label="C8H9NO\n134.0613 Da, 9.83 %\nMassDev: 1.2125 ppm, 0.0002 Da\ncE: [5]\nMass Deviation=-0.1756\nCommon Fragments:=0.6753\nTreeSizeScorer=0.5000\nIntensity=1.7968\nFragmentSizeScorer=0.6594\nFree Radical=-0.0937\nChemicalPriorEdgeScorer=0.0399\nCommonLossEdgeScorer=-0.5108\nLossSizeScorer=0.6631\nScore: 3.5544"];
+v5 [label="C8H8NO\n133.0526 Da, 9.74 %\nMassDev: -5.3545 ppm, -0.0007 Da\ncE: [5]\nMass Deviation=-0.9857\nTreeSizeScorer=0.5000\nIntensity=1.7911\nFragmentSizeScorer=0.6695\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0258\nCommonLossEdgeScorer=-0.6568\nLossSizeScorer=0.6478\nScore: 2.0033"];
+v6 [label="C8H9BrNO\n212.9804 Da, 46.58 %\nMassDev: 4.3452 ppm, 0.0009 Da\ncE: [5]\nMass Deviation=-1.2743\nTreeSizeScorer=0.5000\nIntensity=2.7355\nFree Radical=-0.0937\nChemicalPriorEdgeScorer=0.0483\nCommonLossEdgeScorer=-0.5108\nLossSizeScorer=0.6631\nScore: 2.0680"];
+v7 [label="C8H9Br2NO\n291.8989 Da, 59.18 %\nMassDev: 3.7285 ppm, 0.0011 Da\ncE: [5]\nMass Deviation=-1.0415\nTreeSizeScorer=0.5000\nIntensity=2.8799\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0396\nCommonLossEdgeScorer=-2.7296\nLossSizeScorer=0.8860\nScore: 0.5459"];
+v8 [label="C9H9Br2NO3\n335.8871 Da, 38.68 %\nMassDev: -1.6104 ppm, -0.0005 Da\ncE: [5]\nMass Deviation=-0.3738\nChemical Prior=0.2185\nStrangeElementRootScorer=-1.3863\nScore: -1.5415"];
+v7 -> v1 [label="H3N"];
+v3 -> v2 [label="C6H5O"];
+v6 -> v3 [label="C2H3N"];
+v6 -> v4 [label="Br"];
+v6 -> v5 [label="HBr"];
+v7 -> v6 [label="Br"];
+v8 -> v7 [label="CO2"];
+}

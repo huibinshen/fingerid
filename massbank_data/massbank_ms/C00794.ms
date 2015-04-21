@@ -1,0 +1,34 @@
+>compound D-Sorbitol_D-Sorbitol
+#instrument UPLC Q-Tof Premier, Waters
+>formula C6H14O6
+#smiles OCC(O)C(O)C(O)C(O)CO
+#RECORD LC-ESI-QTOF_train_data/PR100703.txt;LC-ESI-QTOF_train_data/PR100279.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 181.07123
+
+>collision 5-60
+59.0155 47.71
+71.0152 179.7
+73.0307 58.39
+85.0307 30.38
+89.0248 82.29
+101.0241 146.6
+113.0243 18.86
+119.0344 15.07
+163.0601 19.45
+181.0712 351.1
+
+>collision 5-60
+69.0348 29.31
+83.0515 14.51
+85.0293 8.822
+87.0457 5.312
+97.9702 4.814
+99.0441 7.779
+99.5119 8.473
+111.0456 9.472
+129.0571 14.19
+147.067 7.831
+183.0868 4.797
+

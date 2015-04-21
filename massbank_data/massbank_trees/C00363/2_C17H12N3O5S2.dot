@@ -1,0 +1,5 @@
+strict digraph {
+v1 [label="C17H10N3O4S2\n383.0056 Da, 10.87 %\nMassDev: 4.1870 ppm, 0.0016 Da\ncE: [5]\nMass Deviation=-1.2158\nTreeSizeScorer=0.5000\nIntensity=1.8574\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0074\nCommonLossEdgeScorer=2.0823\nLossSizeScorer=-0.5801\nScore: 2.6628"];
+v2 [label="C17H12N3O5S2\n401.0151 Da, 93.35 %\nMassDev: 1.3440 ppm, 0.0005 Da\ncE: [5]\nMass Deviation=-0.3045\nIntrinsicallyChargedScorer=-2.3026\nChemical Prior=0.1647\nStrangeElementRootScorer=-1.3863\nScore: -3.8287"];
+v2 -> v1 [label="H2O"];
+}

@@ -1,0 +1,5 @@
+strict digraph {
+v1 [label="C6H6N3\n121.0633 Da, 100.00 %\nMassDev: -1.2278 ppm, -0.0001 Da\ncE: [5]\nMass Deviation=-0.1595\nTreeSizeScorer=0.5000\nIntensity=3.1964\nFragmentSizeScorer=0.7894\nFree Radical=0.0116\nChemicalPriorEdgeScorer=0.0483\nCommonLossEdgeScorer=0.9361\nLossSizeScorer=-0.7449\nScore: 4.5775"];
+v2 [label="C6H9N4\n138.0919 Da, 1.60 %\nMassDev: 13.7753 ppm, 0.0019 Da\ncE: [5]\nMass Deviation=-4.0504\nIntrinsicallyChargedScorer=-2.3026\nChemical Prior=-1.8883\nScore: -8.2413"];
+v2 -> v1 [label="H3N"];
+}

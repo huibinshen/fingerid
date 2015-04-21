@@ -1,0 +1,42 @@
+>compound 3-Hydroxy-DL-kynurenine_3-Hydroxy-DL-kynurenine
+#instrument UPLC Q-Tof Premier, Waters
+>formula C10H12N2O4
+#smiles OC(=O)C(N)CC(=O)c(c1)c(N)c(O)cc1
+#RECORD LC-ESI-QTOF_train_data/PR100530.txt;LC-ESI-QTOF_train_data/PR100096.txt;LC-ESI-QTOF_train_data/PR100097.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 223.0719
+
+>collision 5-60
+108.0652 3.588
+134.0891 6.048
+144.073 6.092
+147.0609 18.65
+160.0722 8.628
+160.8744 5.848
+162.0872 25.13
+162.8725 7.974
+164.8728 4.788
+188.0709 6.224
+197.8502 3.933
+206.0879 15.98
+223.0719 5.043
+
+>collision 5-60
+208.0697 8.536
+224.0759 9.778
+225.0875 73.61
+
+>collision 30
+110.0706 1.827
+136.047 1.293
+152.0892 2.848
+208.0777 3.698
+208.9568 2.06
+209.0499 9.453
+224.7446 1.312
+224.9298 1.287
+224.9783 2.093
+224.9984 1.512
+225.0875 14.16
+

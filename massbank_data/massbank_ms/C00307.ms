@@ -1,0 +1,51 @@
+>compound Cytidine 5'-diphosphocholine_Cytidine 5'-diphosphocholine
+#instrument UPLC Q-Tof Premier, Waters
+>formula C14H26N4O11P2
+#smiles NC(C=2)=NC(=O)N(C2)C(O1)C(O)C(O)C(COP(O)(=O)OP([O-1])(=O)OCC[N+1](C)(C)C)1
+#RECORD LC-ESI-QTOF_train_data/PR100539.txt;LC-ESI-QTOF_train_data/PR100317.txt;LC-ESI-QTOF_train_data/PR100121.txt;LC-ESI-QTOF_train_data/PR100751.txt;LC-ESI-QTOF_train_data/PR100122.txt
+>charge -1
+>ionization [M-H]-
+>parentmass 487.09953
+
+>collision 5-60
+78.9602 519.0
+96.9698 176.4
+110.0359 249.3
+110.9853 99.17
+122.9853 194.8
+304.0353 432.1
+336.0625 122.0
+428.0264 774.7
+487.0995 155.1
+
+>collision 5-60
+86.0971 164.3
+105.0708 135.0
+125.0007 103.4
+184.0743 1036.0
+264.0407 539.8
+360.061 215.2
+378.0712 134.0
+489.1151 360.5
+
+>collision 5-60
+264.0453 19.63
+489.1151 416.7
+
+>collision 5-60
+78.9601 304.9
+96.9694 102.9
+110.0364 148.8
+110.9858 54.92
+122.9852 118.6
+304.0353 262.6
+336.0631 85.63
+428.0274 465.7
+487.0995 92.54
+
+>collision 30
+264.0467 18.45
+360.0662 17.06
+378.077 20.71
+489.1151 177.6
+
