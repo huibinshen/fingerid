@@ -1,3 +1,0 @@
-strict digraph {
-v1 [label="C13H9O3\n214.0635 Da, 0.00 %\nMassDev: 4.6921 ppm, 0.0010 Da\ncE: []\nIntrinsicallyChargedScorer=-2.3026\nChemical Prior=0.1373\nScore: -2.1653"];
-}
