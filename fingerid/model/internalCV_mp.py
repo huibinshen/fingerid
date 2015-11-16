@@ -58,7 +58,7 @@ def internalCV_mp(kernel, labels, n_folds, select_c=False, n_p=8, prob=False):
     #cv_accs = numpy.zeros(n_y)
     pred_fp = numpy.zeros((n_x, n_y))
 
-    #tags = _label_folds(n_x, n_folds)
+    tags = _label_folds(n_x, n_folds)
     result_queue = multiprocessing.Queue(n_y)
 
     task_dict = {}
