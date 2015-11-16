@@ -9,6 +9,8 @@ improve fingerprints prediction.
 
 The previous versions are hosted on sourceforge: http://sourceforge.net/projects/fingerid/
 
+Please note that the package had NOT been tested on windows. Running the package on linux
+is suggested.
 
 Changes
 =======
