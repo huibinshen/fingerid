@@ -163,8 +163,8 @@ def _CV_BestC(x, y, ind, tags, n_folds, pb):
 
         train_all = numpy.array(~test)            
 
-        test_km = kernel[numpy.ix_(test, train_all)]
-        train_km = kernel[numpy.ix_(train_all, train_all)]
+        test_km = x[numpy.ix_(test, train_all)]
+        train_km = x[numpy.ix_(train_all, train_all)]
         n_train = len(train_km)
         n_test = len(test_km)
         train_km = numpy.append(numpy.array(range(1,n_train+1)).reshape(
@@ -172,7 +172,7 @@ def _CV_BestC(x, y, ind, tags, n_folds, pb):
         test_km = numpy.append(numpy.array(range(1,n_test+1)).reshape(
                 n_test,1), test_km,1).tolist()
         test_y = y[test]
-        train_y = y[train]
+        train_y = y[train_all]
         prob = svm_problem(train_y, train_km, isKernel=True)
             
         # prediction on test set with best C
