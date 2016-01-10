@@ -26,7 +26,7 @@ Dependencies
 
 - Python >= 2.7
 - Numpy >= 1.4.0
-- [LibSVM](http://cvxopt.org/install/index.html) 3.17 python interface
+- [LibSVM](https://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/) 3.17 python interface
 - [cvxopt](http://cvxopt.org/install/index.html), optional, only needed if using 'ALIGNF' to combine the kernels
 
 Install
