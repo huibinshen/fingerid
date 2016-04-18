@@ -66,6 +66,7 @@ Parse MS/MS spectra to the internal representation.
   ```python
   from fingerid.preprocess.msparser import MSParser
   # ms_folder is the folder for all the spectra.
+  msparser = MSParser()
   ms_list = msparser.parse_dir(ms_folder) 
   ```
 
