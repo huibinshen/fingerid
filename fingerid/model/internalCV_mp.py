@@ -73,19 +73,25 @@ def internalCV_mp(kernel, labels, n_folds, select_c=False, n_p=8, prob=False):
     for i in range(n_y):
         task_dict[i%n_p].append(i)
 
+    jobs = []
     for i in range(n_p):
         if select_c:
             p = multiprocessing.Process(target=_CV_BestC, 
                                         args=(result_queue, x, labels, 
                                               task_dict[i], tags, n_folds, 
                                               prob,))
+            jobs.append(p)
             p.start()
         else:
             p = multiprocessing.Process(target=_CV, 
                                         args=(result_queue, x, labels, 
                                               task_dict[i], tags, n_folds, 
                                               prob,))
+            jobs.append(p)
             p.start()
+
+    for job in jobs:
+        job.join()
 
     for i in range(n_y):
         res = result_queue.get()

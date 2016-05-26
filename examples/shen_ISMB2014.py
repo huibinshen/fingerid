@@ -103,6 +103,7 @@ if __name__ == "__main__":
     # To run the 978 componds dataset, change fgtree_folder to "metlin_trees".
     # The MS/MS used in the paper can be downloaded from METLIN database
     # with the same metlin id used in the filenames of fgtrees.
+    # We don't have the right to give the mass spectra.
     fgtree_folder = "test_data/train_trees/"
     ms_folder = "test_data/train_ms/"
     fingerprints = "test_data/train_output.txt" # output we want to predict

@@ -57,13 +57,14 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4, prob=False):
     for i in range(n_y):
         task_dict[i%n_p].append(i)
 
-    ps = []
+    jobs = []
     for i in range(n_p):
         #y = labels[:,i]
         if select_c:
             p = multiprocessing.Process(target=_trainSVMBestC, 
                                         args=(x, labels, model_dir, 
                                               task_dict[i], tags, prob,))
+            jobs.append(p)
             p.start()
         else:
             x = numpy.append(numpy.array(
@@ -71,10 +72,11 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4, prob=False):
             p = multiprocessing.Process(target=_trainSVM, 
                                         args=(x, labels, model_dir, 
                                               task_dict[i], prob,))
+            jobs.append(p)
             p.start()
 
-   # for p in ps:
-   #     p.join()
+    for job in jobs:
+        job.join()
 
     # collect result
     #for i in range(n_y):
