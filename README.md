@@ -31,7 +31,7 @@ Dependencies
 
 Install
 =======
-- If you have root permission:
+- If you have root permission (assume [setuptools](https://pypi.python.org/pypi/setuptools) installed):
 
   ```python
   python setup.py install
