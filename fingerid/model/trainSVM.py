@@ -11,14 +11,6 @@ import multiprocessing
 
 from svmutil import *
 
-#class result():
-    # internal class passed to by sub process
-#    def __init__(self, i):
-#        self.fp_ind = i # int
-#        self.acc = 0
-#        self.model = None # returned by svm_train
-
-
 def trainModels(kernel, labels, model_dir, select_c=False, n_p=4, prob=False):
     """Train SVM on all the training data.
     All the fingeprints will be trained by n_p processes.
@@ -48,12 +40,21 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4, prob=False):
     (n_x, n_x) = kernel.shape
     (n_x, n_y) = labels.shape
     x = kernel
-    n_folds = 5 # internally use 5 folds cross validation to find the best parameter
+    # internally use 5 folds cross validation to find the best parameter
+    n_folds = 5 
 
     tags = _label_folds(n_x, n_folds)
 
     #cv_accs = numpy.zeros(n_y) # cross validation accuracy
     #result_queue = multiprocessing.Queue(n_y)
+    if n_y < n_p:
+        print "Only %d fingerprints are used" % n_y
+        print "Change n_p to %d" % n_y
+        n_p = n_y
+    if multiprocessing.cpu_count() < n_p:
+        print "The machine has only %d CPUs" % multiprocessing.cpu_count()
+        print "Change n_p tp %d" % multiprocessing.cpu_count()
+        n_p = multiprocessing.cpu_count()
 
     task_dict = {}
     for i in range(n_y):
@@ -66,18 +67,21 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4, prob=False):
         #y = labels[:,i]
         if select_c:
             p = multiprocessing.Process(target=_trainSVMBestC, 
-                                        args=(x, labels, model_dir, task_dict[i], tags, prob))
+                                        args=(x, labels, model_dir, 
+                                              task_dict[i], tags, prob))
             p.start()
             ps.append(p)
         else:
             x = numpy.append(numpy.array(
                     range(1,n_x+1)).reshape(n_x,1),x,1).tolist()
             p = multiprocessing.Process(target=_trainSVM, 
-                                        args=(x, labels, model_dir, task_dict[i], prob))
+                                        args=(x, labels, model_dir, 
+                                              task_dict[i], prob))
             p.start()
             ps.append(p)
     for p in ps:
         p.join()
+
     # collect result
     #for i in range(n_y):
     #    res = result_queue.get()
@@ -185,8 +189,6 @@ def _trainSVMBestC(k_m, labels, model_dir, inds, tags, pb):
             param = svm_parameter('-t 4 -c %f -b 0 -q' % best_c)
             m = svm_train(prob, param)
             svm_save_model('%s/%d.model' % (model_dir,ind), m)
-
-
 
         #res.ind = ind
         #res.acc = max(accs)

@@ -1,35 +1,33 @@
 """
-================================================================================
+==============================================================================
 Pipeline when train and test are sperated.
 If only interested in cross validation on train set, use the pipeline of 
 shen_ISMB2014.py.
-================================================================================
+==============================================================================
 """
 
 import sys
 import numpy
-import multiprocessing
 import warnings; warnings.filterwarnings('ignore')
+# Comment the following line if fingerid has been installed,
+# otherwise, leave it there
+sys.path.append("../../fingerid")
 
-sys.path.append("../../fingerid") # path to fingerid package         
 from fingerid.preprocess.msparser import MSParser
 from fingerid.preprocess.fgtreeparser import FragTreeParser
 from fingerid.kernel.twodgaussiankernel import TwoDGaussianKernel
 from fingerid.kernel.fgtreekernel import FragTreeKernel
 from fingerid.kernel.mskernel import Kernel
 from fingerid.kernel.mkl import mkl
-from fingerid.model.internalCV_mp import internalCV_mp
-
 from fingerid.model.trainSVM import trainModels
 from fingerid.model.predSVM import predModels
 from fingerid.kernel.twodgaussiankernel import TwoDGaussianKernel
-
 from fingerid.preprocess.util import writeIDs
 from fingerid.preprocess.util import centerTestKernel
 
 
 if __name__ == "__main__":
-    """ Another pipeline when you have train/test instead of cross validation""" 
+    """Another pipeline when you have train/test instead of cross validation""" 
     # parse data
     print "parse data\n"
     fgtreeparser = FragTreeParser()
@@ -48,7 +46,8 @@ if __name__ == "__main__":
     writeIDs("fgtrees.txt", train_trees)
 
     # compute train and test kernels
-    types = ["PPK","NB","NI","LB","LC","LI","RLB","RLI","CPC","CP2","CPK","CSC"]
+    types = ["PPK","NB","NI","LB","LC","LI","RLB","RLI","CPC","CP2",
+             "CPK","CSC"]
     train_km_list = []
     test_km_list = []
     # can use mulitp process
@@ -69,11 +68,14 @@ if __name__ == "__main__":
             if ty == "CPK": # to use CPK kernel, sm, and si are needed
                 sm = 0.00001
                 si = 100000
-                train_km = kernel.compute_train_kernel(train_trees, ty, sm=sm, si=si)
-                test_km = kernel.compute_test_kernel(test_trees, train_trees, ty, sm=sm, si=si)
+                train_km = kernel.compute_train_kernel(train_trees, ty, 
+                                                       sm=sm, si=si)
+                test_km = kernel.compute_test_kernel(test_trees, train_trees, 
+                                                     ty, sm=sm, si=si)
             else:
                 train_km = kernel.compute_train_kernel(train_trees, ty)
-                test_km = kernel.compute_test_kernel(test_trees, train_trees, ty)
+                test_km = kernel.compute_test_kernel(test_trees, train_trees,
+                                                     ty)
             train_km_list.append(train_km)
             test_km_list.append(centerTestKernel(test_km,train_km))
 
@@ -90,7 +92,8 @@ if __name__ == "__main__":
     print "train models and make prediction"
     # MODELS is the folder to store trained models.
     prob= True # Set prob=True if want probability output
-    trainModels(train_ckm, labels, "MODELS", select_c=False, n_p=4, prob=prob)
+    trainModels(train_ckm, labels, "MODELS", select_c=False, n_p=16, 
+                prob=prob)
     #print models
     preds = predModels(test_ckm, n_fp, "MODELS", prob=prob)
     if prob:
