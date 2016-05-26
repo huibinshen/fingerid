@@ -51,7 +51,6 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4, prob=False):
         print "Only %d fingerprints are used" % n_y
         print "Change n_p to %d" % n_y
         n_p = n_y
-
     task_dict = {}
     for i in range(n_y):
         task_dict[i%n_p] = []
@@ -64,19 +63,18 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4, prob=False):
         if select_c:
             p = multiprocessing.Process(target=_trainSVMBestC, 
                                         args=(x, labels, model_dir, 
-                                              task_dict[i], tags, prob))
+                                              task_dict[i], tags, prob,))
             p.start()
-            ps.append(p)
         else:
             x = numpy.append(numpy.array(
                     range(1,n_x+1)).reshape(n_x,1),x,1).tolist()
             p = multiprocessing.Process(target=_trainSVM, 
                                         args=(x, labels, model_dir, 
-                                              task_dict[i], prob))
+                                              task_dict[i], prob,))
             p.start()
-            ps.append(p)
-    for p in ps:
-        p.join()
+
+   # for p in ps:
+   #     p.join()
 
     # collect result
     #for i in range(n_y):

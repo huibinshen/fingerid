@@ -50,7 +50,10 @@ if __name__ == "__main__":
              "CPK","CSC"]
     train_km_list = []
     test_km_list = []
-    # can use mulitp process
+
+    # Can use mulitp process to speed up computation
+    # as in shen_ISMB2014.py. But here only compute sequentially
+
     for ty in types:
         print "computing %s kernels" % ty
         if ty == "PPK":
@@ -78,7 +81,7 @@ if __name__ == "__main__":
                                                      ty)
             train_km_list.append(train_km)
             test_km_list.append(centerTestKernel(test_km,train_km))
-
+    print 
     print "combine kernels\n"
     # compute combined train and test kernel
     train_ckm, w = mkl(train_km_list, labels, 'ALIGN')
@@ -92,8 +95,9 @@ if __name__ == "__main__":
     print "train models and make prediction"
     # MODELS is the folder to store trained models.
     prob= True # Set prob=True if want probability output
-    trainModels(train_ckm, labels, "MODELS", select_c=False, n_p=16, 
+    trainModels(train_ckm, labels, "MODELS", select_c=True, n_p=4, 
                 prob=prob)
+
     #print models
     preds = predModels(test_ckm, n_fp, "MODELS", prob=prob)
     if prob:

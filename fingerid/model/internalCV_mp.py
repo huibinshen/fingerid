@@ -18,6 +18,7 @@ class result():
         self.fp_ind = i # fingerprint index 
         self.pred_fp_ = numpy.zeros(n) # predicted fingerprints
         self.acc = 0 # cross validation accuracy
+
 def internalCV_mp(kernel, labels, n_folds, select_c=False, n_p=8, prob=False):    
     """
     Internel cross validation using train data.
@@ -61,6 +62,11 @@ def internalCV_mp(kernel, labels, n_folds, select_c=False, n_p=8, prob=False):
     tags = _label_folds(n_x, n_folds)
     result_queue = multiprocessing.Queue(n_y)
 
+    if n_y < n_p:
+        print "Only %d fingerprints are used" % n_y
+        print "Change n_p to %d" % n_y
+        n_p = n_y
+
     task_dict = {}
     for i in range(n_y):
         task_dict[i%n_p] = []
@@ -70,11 +76,15 @@ def internalCV_mp(kernel, labels, n_folds, select_c=False, n_p=8, prob=False):
     for i in range(n_p):
         if select_c:
             p = multiprocessing.Process(target=_CV_BestC, 
-                                        args=(result_queue, x, labels, task_dict[i], tags, n_folds, prob, ))
+                                        args=(result_queue, x, labels, 
+                                              task_dict[i], tags, n_folds, 
+                                              prob,))
             p.start()
         else:
             p = multiprocessing.Process(target=_CV, 
-                                        args=(result_queue, x, labels, task_dict[i], tags, n_folds, prob,))
+                                        args=(result_queue, x, labels, 
+                                              task_dict[i], tags, n_folds, 
+                                              prob,))
             p.start()
 
     for i in range(n_y):

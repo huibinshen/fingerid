@@ -14,8 +14,10 @@ import sys
 import numpy
 import multiprocessing
 import warnings; warnings.filterwarnings('ignore')
-
+# Comment the following line if fingerid has been installed,
+# otherwise, leave it there
 sys.path.append("../../fingerid") # path to fingerid package         
+
 from fingerid.preprocess.msparser import MSParser
 from fingerid.preprocess.fgtreeparser import FragTreeParser
 from fingerid.kernel.mskernel import Kernel
@@ -24,8 +26,6 @@ from fingerid.kernel.fgtreekernel import FragTreeKernel
 from fingerid.kernel.mkl import mkl
 from fingerid.model.internalCV_mp import internalCV_mp
 from fingerid.model.internalCV import internalCV
-from fingerid.model.trainSVM import trainModels
-from fingerid.model.predSVM import predModels
 
 def compute_kernel(km_f, ms_folder, fgtree_folder):
     """ compute the kernel indicated by keyword """
@@ -55,9 +55,10 @@ def compute_kernel(km_f, ms_folder, fgtree_folder):
         kernel.write_kernel(train_km, km_f)
     print "Writing %s kernel to %s" % (km_type, km_f)
 
-
 def kernelMP(types, ms_folder, fgtree_folder):
-    """ Compute kernel with multiprocess """
+    """ Compute kernel with multiprocess. Using as many processes 
+        as many trypes.
+    """
     km_fs = []
     procs = []
     for km_type in types:
@@ -71,8 +72,10 @@ def kernelMP(types, ms_folder, fgtree_folder):
         p.join()    # wait until all sub-processes finished
     return km_fs
 
-def trainSVM(km_f, labels_f, np = 4, c_sel=False):
-    """ Train svm with the specified kernel """
+def trainSVMCV(km_f, labels_f, n_p=4, c_sel=False):
+    """ Train svm with the specified kernel 
+        Write the cross validations prediction of fingerprints.
+    """
     km_type = km_f[:km_f.find("_kernel.txt")]
     print "Train SVM for kernel %s" % km_type
     # this files will be generated
@@ -88,7 +91,8 @@ def trainSVM(km_f, labels_f, np = 4, c_sel=False):
     #cvpreds = internalCV(train_km, labels, 5, select_c=c_sel)
 
     prob = False # set prob = True if want probability output
-    cvpreds = internalCV_mp(train_km, labels, 5, select_c=c_sel, n_p=np, prob=prob)
+    cvpreds = internalCV_mp(train_km, labels, 5, select_c=c_sel, n_p=n_p, 
+                            prob=prob)
     numpy.savetxt(cvpred_f, cvpreds, fmt="%.4f")
     print "Writting prediction in %s" % cvpred_f
 
@@ -105,6 +109,8 @@ if __name__ == "__main__":
 
     # compute 12 kernels using 12 process.
     # Could compute one by one by use compute_kernel function
+    # Now we use as many cores as number of kernels
+    # If no fragmentation trees available, just use 'PPK'
     types = ["PPK","NB","NI","LB","LC","LI","RLB","RLI","CPC","CP2","CPK","CSC"]
     # km_fs is the list of file names of all the kernel matrices
     km_fs = kernelMP(types, ms_folder, fgtree_folder) 
@@ -112,9 +118,8 @@ if __name__ == "__main__":
 
     # Predict for individual kernel, using np processes
     # In the training, doing selection of best C in SVM.
-
     for km_f in km_fs:        
-        trainSVM(km_f, fingerprints, np=4, c_sel=True)
+        trainSVMCV(km_f, fingerprints, n_p=4, c_sel=True)
     print
 
     # Get the combined kernel using 'UNIMKL', 'ALIGN' or 'ALIGNF'
@@ -123,12 +128,18 @@ if __name__ == "__main__":
     for km_f in km_fs:
         km_list.append(numpy.loadtxt(km_f))
     output = numpy.loadtxt(fingerprints)
-    ckm, w = mkl(km_list, output, 'ALIGN')
+
+    mkl_algo = 'ALIGN' # 'ALIGNF' is the other option
+    ckm, w = mkl(km_list, output, mkl_algo)
     print "Kernel weights:"
     print w
-    ckm_f = 'ALIGN_kernel.txt'
+    ckm_f = '%s_kernel.txt' % mkl_algo
     numpy.savetxt(ckm_f, ckm)
-    # predict for combined kernel, using np processes
-    trainSVM(ckm_f, fingerprints,  np=4, c_sel=True)
+
+    # Cross validation uses n_p processes
+    # trainSVMCV function will write cross validation predictions out.
+    # If you want to store the models for later use, please refer
+    # train_test.py for more detail.
+    trainSVMCV(ckm_f, fingerprints,  n_p=4, c_sel=True)
 
 
