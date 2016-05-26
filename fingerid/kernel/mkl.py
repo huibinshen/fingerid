@@ -39,13 +39,13 @@ def mkl(km_list, labels, c_type):
         """Two stage model, weight as idenpedently centered alignment score"""
         ky = numpy.dot(labels,labels.T)
         ky_c = center(ky)
-        ky_c = normalize_km(ky_c)
+        #ky_c = normalize_km(ky_c)
         ky_n = f_norm(ky_c)
         w = []
         train_km = numpy.zeros(km_list[0].shape)
         for km in km_list:
             km_c = center(km)
-            km_c = normalize_km(km_c)
+            #km_c = normalize_km(km_c)
             s = f_dot(km_c, ky_c) / f_norm(km) / ky_n
             w.append(s)
             train_km = train_km + s*km_c
@@ -57,12 +57,12 @@ def mkl(km_list, labels, c_type):
     elif c_type == 'ALIGNF':
         ky = numpy.dot(labels,labels.T)
         ky_c = center(ky)
-        ky_c = normalize_km(ky_c)
+        #ky_c = normalize_km(ky_c)
         a = []
         kmc_list = []
         for km in km_list:
             km_c = center(km)
-            km_c = normalize_km(km_c)
+            #km_c = normalize_km(km_c)
             a.append(f_dot(km_c, ky_c))
             kmc_list.append(km_c)
         a = numpy.array(a,dtype='d')
