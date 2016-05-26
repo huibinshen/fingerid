@@ -51,10 +51,6 @@ def trainModels(kernel, labels, model_dir, select_c=False, n_p=4, prob=False):
         print "Only %d fingerprints are used" % n_y
         print "Change n_p to %d" % n_y
         n_p = n_y
-    if multiprocessing.cpu_count() < n_p:
-        print "The machine has only %d CPUs" % multiprocessing.cpu_count()
-        print "Change n_p tp %d" % multiprocessing.cpu_count()
-        n_p = multiprocessing.cpu_count()
 
     task_dict = {}
     for i in range(n_y):
