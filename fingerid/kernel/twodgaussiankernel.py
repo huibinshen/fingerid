@@ -173,7 +173,7 @@ class TwoDGaussianKernel(Kernel):
         N1 = numpy.size(X1,0); N2 = numpy.size(X2,0)
         if N1 == 0 or N2 == 0:
             raise Exception("[ERROR]:No peaks when computing the kernel.(try not clean the peaks)")
-        constant = 1.0/(N1*N2)*0.25/(numpy.pi*numpy.sqrt(sm*si))
+        constant = 1.0/(N1*N2)*0.25/(numpy.pi*sm*si)
         mass_term = 1.0/sm * numpy.power(numpy.kron(X1[:,0].flatten(),numpy.ones(N2)) - numpy.kron(numpy.ones(N1),X2[:,0].flatten()),2)
         inte_term = 1.0/si * numpy.power(numpy.kron(X1[:,1].flatten(),numpy.ones(N2)) - numpy.kron(numpy.ones(N1),X2[:,1].flatten()),2)
         return constant*sum(numpy.exp(-0.25*(mass_term + inte_term)))
