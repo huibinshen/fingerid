@@ -4,6 +4,13 @@ FingerID 1.4
 This is FingerID 1.4 release. This version will only focus on the fingerprints
 prediction, without fingerprints generation and compound database retrieval.
 
+This is the code repo for the paper [1] in the reference:
+Shen, H., Dührkop, K., Böcker, S. and Rousu, J., 2014. 
+Metabolite identification through multiple kernel learning on fragmentation trees. 
+Bioinformatics, 30(12),  pp.i157-i164.
+
+To use [CSI-fingerID](http://www.csi-fingerid.org), plesae refer to the website included.
+
 This package utilize fragmentation tree, another view of MS/MS spectra, to 
 improve fingerprints prediction.
 
@@ -215,8 +222,8 @@ It's may be necessary to check whether the spectra and the fragmentation trees a
 
 References
 ==========
-Huibin Shen, Kai D\"ahrkop, Sebastian B\"ocker and Juho Rousu: Metabolite Identification through Multiple Kernel Learning on Fragmentation Trees. In the proceedings of ISMB 2014, Bioinformatics 30(12), i157-i164 (2014). 
+[1] Huibin Shen, Kai D\"ahrkop, Sebastian B\"ocker and Juho Rousu: Metabolite Identification through Multiple Kernel Learning on Fragmentation Trees. In the proceedings of ISMB 2014, Bioinformatics 30(12), i157-i164 (2014). 
 
-Huibin Shen, Niocola Zamboni, Markus Heinonen, Juho Rousu: Metabolite identification through machine learning -- tackling casmi challenge using fingerid. Metabolites 3(2), 484--505 (2013).
+[2] Huibin Shen, Niocola Zamboni, Markus Heinonen, Juho Rousu: Metabolite identification through machine learning -- tackling casmi challenge using fingerid. Metabolites 3(2), 484--505 (2013).
 
-Markus Heinonen, Huibin Shen, Niocola Zamboni, Juho Rousu: Metabolite identification and molecular fingerprint prediction through machine learning. In the proceedings of MLSB 2012, Bioinformatics 28(18), 2333--2341 (2012).
+[3] Markus Heinonen, Huibin Shen, Niocola Zamboni, Juho Rousu: Metabolite identification and molecular fingerprint prediction through machine learning. In the proceedings of MLSB 2012, Bioinformatics 28(18), 2333--2341 (2012).
