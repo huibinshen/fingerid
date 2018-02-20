@@ -223,7 +223,7 @@ It's may be necessary to check whether the spectra and the fragmentation trees a
 
 References
 ==========
-[1] Huibin Shen, Kai D\"ahrkop, Sebastian B\"ocker and Juho Rousu: Metabolite Identification through Multiple Kernel Learning on Fragmentation Trees. In the proceedings of ISMB 2014, Bioinformatics 30(12), i157-i164 (2014). 
+[1] Huibin Shen, Kai Dührkop, Sebastian Böcker and Juho Rousu: Metabolite Identification through Multiple Kernel Learning on Fragmentation Trees. In the proceedings of ISMB 2014, Bioinformatics 30(12), i157-i164 (2014). 
 
 [2] Huibin Shen, Niocola Zamboni, Markus Heinonen, Juho Rousu: Metabolite identification through machine learning -- tackling casmi challenge using fingerid. Metabolites 3(2), 484--505 (2013).
 
