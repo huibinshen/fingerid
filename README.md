@@ -1,8 +1,8 @@
 FingerID 1.4
 ============
 
-:warning: This is **not** the code repo for [CSI-fingerID](http://www.csi-fingerid.org).
-To use [CSI-fingerID](http://www.csi-fingerid.org), plesae visit this [page](https://bio.informatik.uni-jena.de/software/sirius/).
+:warning: This is **not** the code repo for [CSI:fingerID](http://www.csi-fingerid.org) [Dührkop et al].
+To use [CSI:fingerID](http://www.csi-fingerid.org), please visit this [page](https://bio.informatik.uni-jena.de/software/sirius/).
 This repo is not actively maintained, however, if you spot a bug or have questions, please
 open an issue.
 
