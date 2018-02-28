@@ -1,16 +1,18 @@
 FingerID 1.4
 ============
 
+:warning: This is **not** the code repo for [CSI-fingerID](http://www.csi-fingerid.org).
+To use [CSI-fingerID](http://www.csi-fingerid.org), plesae refer to the website included.
+This repo is not actively maintained, however, if you spot a bug or have questions, please
+open an issue.
+
 This is FingerID 1.4 release. This version will only focus on the fingerprints
 prediction, without fingerprints generation and compound database retrieval.
-
-This is the code repo for the paper [1] in the reference:
+This repo includes the code for the paper:
 
 Shen, H., Dührkop, K., Böcker, S. and Rousu, J., 2014. 
 Metabolite identification through multiple kernel learning on fragmentation trees. 
 Bioinformatics, 30(12),  pp.i157-i164.
-
-To use [CSI-fingerID](http://www.csi-fingerid.org), plesae refer to the website included.
 
 This package utilize fragmentation tree, another view of MS/MS spectra, to 
 improve fingerprints prediction.
