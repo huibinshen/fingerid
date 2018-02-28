@@ -3,7 +3,7 @@ FingerID 1.4
 
 :warning: This is **not** the code repo for [CSI:fingerID](http://www.csi-fingerid.org) [Dührkop et al].
 To use [CSI:fingerID](http://www.csi-fingerid.org), please visit this [page](https://bio.informatik.uni-jena.de/software/sirius/). CSI:fingerID extends the method of this repo in many ways, including but not limited to: 
-more kernels for MS/MS spectra, a different set of molecular fingerprints and a different scoring functions, etc. 
+more kernels for MS/MS spectra, a different set of molecular fingerprints and a different scoring function, etc. 
 This repo is not actively maintained, however, if you spot a bug or have questions, please
 open an issue.
 
